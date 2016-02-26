@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<title>Login</title>
-        <link rel="icon" type="image/png" href="images/Tridente.ico" />
+        <link rel="icon" href="favicon.ico" />
     	<!-- bootstrap -->
         <!-- Let's try to keep common js and css from public CDN at the begining -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -23,13 +23,13 @@
                     <div class="modal-body">
                         <form class="center-block form-horizontal">
                             <div class="form-group">
-                                <input type="text" class="form-control input-lg" placeholder="Correo Electrónico">
+                                <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" id="username">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg" placeholder="Contraseña">
+                                <input type="password" class="form-control input-lg" placeholder="Contraseña" id="password">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-lg btn-primary">Iniciar Sesión</button>
+                                <button class="btn btn-lg btn-primary" id="loginButton">Iniciar Sesión</button>
                             </div>
     				    </form>
                         <div class="col-md-12">
@@ -40,6 +40,6 @@
     			</div>
     		</div>
     	</div>
+        <script type="text/javascript" src="js/bundle.js"></script>
     </body>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>
