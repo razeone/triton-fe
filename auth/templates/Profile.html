@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>Perfil de Usuario</title>
+        <link rel="icon" href="favico" />
+		<!-- bootstrap -->
+		<!-- Let's try to keep common js and css from public CDN at the begining -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        </head>
+        <body>
+            <div class="container" style="padding-top:10px;">
+                <h1 class="page-header">Perfil</h1>
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="text-center">
+                            <img src="http://bit.ly/1KxfZQK">
+                            <!--<i>Change this egg</i>-->
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">      
+                        <h3>Información Personal</h3><br>
+                        <form class="form-horizontal" role="form">
+                        {% for post in post %}
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Nombre:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="name" id="name"  type="text" placeholder="Nombre" value="{{post.name}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Apellido Materno:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control"  type="text" placeholder="Apellido materno" value={{ post.lastname_partenal }}>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Apellido Paterno:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" name="last_name_mo" id="last_name_mo"  type="text" placeholder="Apellido paterno" value="{{post.lastname_martenal}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">RFC:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="text" placeholder="RFC" value="{{post.RFC}}" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Email:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" value="" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Nombre de usuario:</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" placeholder="Nombre de usuario" value="{{post.user}}">
+                                </div>
+                           </div>
+                           <div class="form-group">
+                               <label class="col-md-3 control-label">Contraseña:</label>
+                               <div class="col-md-8">
+                                   <input class="form-control" value="" type="password" placeholder="Contraseña">
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <label class="col-md-3 control-label">Confirmar Contraseña:</label>
+                               <div class="col-md-8">
+                                   <input class="form-control" value="" type="password" placeholder="Contraseña">
+                               </div>
+                           </div>
+                           <% endfor %>
+                           <hr class="colorgraph">
+                           <div class="row" align="right">
+                                   <a href="edit_profile.html"><input type="button" class="btn btn-primary" value="Actucalizar informacion" align="right"></a>
+                           </div>
+
+                        </form>
+                        <br>
+                    </div>    
+                </div>
+            </div>
+        </body>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</html>
