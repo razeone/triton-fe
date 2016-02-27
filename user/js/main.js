@@ -2,5 +2,7 @@
 window.$ = window.jQuery = require('jquery');
 var bootstrap = require('bootstrap');
 var bootstrap_material_design = require('bootstrap-material-design');
+var ripples = require ('../node_modules/bootstrap-material-design/dist/js/ripples.js');
+require('../css/main.css');
 $.material.init()
-var example = require('./login.js')
+var login = require('./login.js')
