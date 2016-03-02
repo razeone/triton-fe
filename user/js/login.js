@@ -7,26 +7,20 @@ $(function(){
 	var active_controllers = ['login_button'];
 
 	function login(){
-		var username = $('#username').val()
+		var username = $('#email').val()
 		var password = $('#password').val()
+		var data = {"username": username, "password": password}
 		// TO-DO add this function
 		$.ajax({
 		  method: "POST",
 		  url: valid_endpoints.login,
-		  data: {
-							'username': username,
-							'password': password
-						},
-			beforeSend: function( xhr ) {
-		    xhr.overrideMimeType( "application/json;" );
-		  }
-
+		  contentType: "application/json",
+		  data: JSON.stringify(data)
 		})
-		  .done(function( msg ) {
-		    alert( "Data Saved: " + msg );
-		  });
-
-			}
+		.done(function( msg ) {
+		  alert( "Data Saved: " + JSON.stringify(msg) );
+		});
+	}
 
 	$('#loginButton').click(function(){
 		login();
