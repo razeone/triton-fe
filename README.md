@@ -8,11 +8,10 @@ Easy setup
 
 ```
 npm install
-npm install -g browserify
-browserify main.js -o bundle.js
+npm run build
 ```
 
-Now you have all your JS and dependencies in `bundle.js
+Now you have all your JS and dependencies and CSS in `bundle.js
 
 TO-DO:
 
