@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="App">
     <head>
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
       <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="icon" href="favicon.ico" />
     </head>
-    <body>
+    <body ng-controller="LoginController">
       <nav class="navbar">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,10 +66,10 @@
         <div class="col-md-12">
           <form class="center-block form-horizontal">
                 <div class="form-group">
-                    <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email">
+                    <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="username">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password">
+                    <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="password">
                 </div>
                 <div class="form-group">
                     <label for="rememberme">Recuérdame</label>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="form-group">
                     <a class="btn btn-lg btn-success btn-raised" id="registerButton">Regístrate</a>
-                    <a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton">Iniciar Sesión</a>
+                    <a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton" ng-click="login()">Iniciar Sesión</a>
                 </div>
           </form>
           <div class="col-md-12 text-center">

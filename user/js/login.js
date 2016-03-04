@@ -1,29 +1,42 @@
-$(function(){
+var app = angular.module("App", ["satellizer"]);
 
-	var valid_endpoints = {
-		'login': 'http://localhost:8085/auth/login'
-	}
+var valid_endpoints =
+{
+	'login': 'http://localhost:8085/auth/login'
+}
 
-	var active_controllers = ['login_button'];
+app.config(function($authProvider)
+{
+	$authProvider.loginUrl = valid_endpoints.login;
+});
 
-	function login(){
-		var username = $('#email').val()
-		var password = $('#password').val()
-		var data = {"username": username, "password": password}
-		// TO-DO add this function
-		$.ajax({
-		  method: "POST",
-		  url: valid_endpoints.login,
-		  contentType: "application/json",
-		  data: JSON.stringify(data)
-		})
-		.done(function( msg ) {
-		  alert( "Data Saved: " + JSON.stringify(msg) );
+app.controller("LoginController", function($scope, $auth)
+{
+	console.log($auth.isAuthenticated());
+
+	$scope.login = function()
+	{
+		$scope.credentials =
+		{
+			username: $scope.username,
+			password: $scope.password
+		}
+
+		$auth.login($scope.credentials).then(function(response)
+		{
+			var data = response.data;
+
+			if(data.success)
+			{
+				alert("ok");
+			}
+			else
+			{
+				alert(data.error);
+			}
+
+			console.log($auth.isAuthenticated());
 		});
 	}
-
-	$('#loginButton').click(function(){
-		login();
-	});
-
 });
+
