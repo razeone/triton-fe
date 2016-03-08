@@ -7,4 +7,4 @@ var angular = require('angular');
 var satellizer = require('satellizer');
 require('../css/main.css');
 $.material.init()
-var login = require('./login.js')
+var access = require('./access.js')
