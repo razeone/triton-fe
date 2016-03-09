@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="App">
 	<head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 	  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 	</head>
-	<body>
+	<body ng-controller="">
 	    <div class="container" style="padding-top:10px;">
 	        <h1 class="page-header">Perfil</h1>
 	        <div class="row">
@@ -19,7 +19,7 @@
 	                <div class="text-center">
 	                    <img src="http://bit.ly/1KxfZQK"  alt="avatar">
 	                    <h4>Actualizar foto de perfil</h4>
-	                    <input type="file" class="text-center center-block well well-sm">
+	                    <input type="file" class="text-center center-block well well-sm" ng-model="">
 	                </div>
 	            </div>
 	            <div class="col-md-8 col-sm-6 col-xs-12 personal-info">      
@@ -28,56 +28,56 @@
 	                <div class="form-group">
 	                    <label class="col-lg-3 control-label">Nombre:</label>
 	                    <div class="col-lg-8">
-	                        <input class="form-control" value="" type="text" placeholder="Nombre">
+	                        <input class="form-control" value="" type="text" placeholder="Nombre" ng-model="">
 	                    </div>
 	                </div>
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">Apellidos:</label>
 	                        <div class="col-lg-8">
-	                            <input class="form-control" value="" type="text" placeholder="Apellidos">
+	                            <input class="form-control" value="" type="text" placeholder="Apellidos" ng-model="">
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <label class="col-lg-3 control-label">RFC:</label>
 	                        <div class="col-lg-8">
-	                            <input class="form-control" value="" type="text" placeholder="RFC">
+	                            <input class="form-control" value="" type="text" placeholder="RFC" ng-model="">
 	                        </div>
 	                    </div>
 	                    <div class="form-group">
 	                       <label class="col-lg-3 control-label">Email:</label>
 	                       <div class="col-lg-8">
-	                           <input class="form-control" value="" type="text" placeholder="Email">
+	                           <input class="form-control" value="" type="text" placeholder="Email" ng-model="">
 	                       </div>
 	                    </div>
 	                    <div class="form-group">
 	                        <label class="col-md-3 control-label">Nombre de usuario:</label>
 	                        <div class="col-md-8">
-	                            <input class="form-control" value="" type="text" placeholder="Nombre de usuario">
+	                            <input class="form-control" value="" type="text" placeholder="Nombre de usuario" ng-model="">
 	                        </div>
 	                   </div>
 	                   <div class="form-group">
 	                       <label class="col-md-3 control-label">Contraseña:</label>
 	                       <div class="col-md-8">
-	                           <input class="form-control" value="" type="password" placeholder="Contraseña">
+	                           <input class="form-control" value="" type="password" placeholder="Contraseña" ng-model="">
 	                       </div>
 	                   </div>
 	                   <div class="form-group">
 	                      <label class="col-md-3 control-label">Confirmar Contraseña:</label>
 	                      <div class="col-md-8">
-	                          <input class="form-control" value="" type="password" placeholder="Contraseña">
+	                          <input class="form-control" value="" type="password" placeholder="Contraseña" ng-model="">
 	                      </div>
 	                   </div>
 	                    <div class="form-group">
                         <label class="col-md-3 control-label">Fecha de creación:</label>
                         <div class="col-md-8">
-                            <input  class="form-control" type="date" name="fecha">
+                            <input  class="form-control" type="date" name="fecha" ng-model="">
                         </div>
                      </div>
 	                   <hr class="colorgraph">
 	                   <div class="row" align="center">
-	                       <div class="col-xs-6 col-md-6"><input class="btn btn-success" value="Guardar Cambios" type="button" ></div>
+	                       <div class="col-xs-6 col-md-6"><input class="btn btn-success" value="Guardar Cambios" type="button"  ng-click=""></div>
 	                       <div class="col-xs-6 col-md-6">
-	                           <a href="profile.html"><input class="btn btn-danger" value="Cancelar" type="button"></a>
+	                           <a href="profile.html"><input class="btn btn-danger" value="Cancelar" type="button" ng-click=""></a>
 	                       </div>
 	                   </div>
 	                </form>

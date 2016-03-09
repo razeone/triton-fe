@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="App">
     <head>
     	<meta charset="utf-8">
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,11 @@
       <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-        <link rel="stylesheet" href="css/style.css">
-
+      <link rel="stylesheet" href="css/style.css">
       <script src="js/modernizr-2.6.2.min.js"></script>
-
-
       <link rel="icon" href="favicon.ico" />
     </head>
-    <body>
+    <body ng-controller="">
 
     <!--Header-->
         <header>
@@ -78,17 +75,17 @@
         <div class="col-md-12">
           <form class="center-block form-horizontal">
                 <div class="form-group">
-                    <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email">
+                    <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password">
+                    <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="">
                 </div>
                 <div class="form-group" align="right">
-                    <input type="checkbox"> Recuérdame
+                    <input type="checkbox" name="rememberme" id="rememberme"> Recuérdame
                 </div>
                 <div class="form-group">
                     <a class="btn btn-lg btn-success btn-raised" id="registerButton">Regístrate</a>
-                    <a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton">Iniciar Sesión</a>
+                    <a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton" ng-click="">Iniciar Sesión</a>
                 </div>
           </form>
           <div class="col-md-12 text-center">
