@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Login</title>
+		<link rel="icon" type="image/png" href="images/Tridente.ico" />
+		<!-- bootstrap -->
+		<!-- Let's try to keep common js and css from public CDN at the begining -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	</head>
+	<body ng-controller="">
+		<div class="container" style="padding-top:10px;">
+			<h1 class="page-header">Perfil</h1>
+			<div class="row">
+				
+				<div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+					<h3>Información Personal</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+                            <label class="col-lg-3 control-label">Nombre:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" type="text" name="nombre" id="nombre" value="" placeholder="Nombre completo" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Nacionalidad:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Nacionalidad" id="Nacionalidad" value="" type="text" placeholder="Nacionalidad" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Estado Civil:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="edo_civil" id="edo_civil" value="" type="text" placeholder="Estado Civil" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Razón Social:</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control"  name="razon_social" id="razon_social" value=""placeholder="Razón Social" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">RFC:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="RFC" id="RFC" value="" type="text" placeholder="RFC" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Domicilio:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Domicilio" id="Domicilio" value="" type="text" placeholder="Domicilio" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Patrimonio:</label>
+                            <div class="col-lg-8">
+                                <input class="form-control" name="Patrimonio" value="" id="Patrimonio" type="text" placeholder="Patrimonio" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Giro:</label>
+                            <div class="col-lg-8">
+                                <input type="text" name="Giro" id="Giro" class="form-control" value="" placeholder="Giro" disabled ng-model="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Fecha de creación:</label>
+                            <div class="col-md-3">
+                                <input  class="form-control" type="date" name="fecha" id="fecha" disabled ng-model="" />
+                            </div>
+                        </div>
+						<hr class="colorgraph">
+						<div class="row" align="center">
+							<div class=c"ol-xs-6 col-md-6">
+								<input class="btn btn-primary" value="Aceptar" type="button"  ng-click=""></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Factura</title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</head>
+	<body ng-controller="">
+		<div class="container" style="padding:20px;">
+			<table>
+				<tr>
+					<th height="124" colspan="7" scope="col">
+						<h1 class="page-header">FACTURA</h1>
+						<table width="90%" height="50" border="0" align="center">
+							<tr>
+								<td  align="left">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label class="col-lg-3 control-label">Numero:</label>
+											<div class="col-xs-3">
+												<input class="form-control"  name="num_factura" id="num_factura" value="" type="text" placeholder="# de Factura" ng-model="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-md-3 control-label">Fecha:</label>
+											<div class="col-md-3">
+												<input  class="form-control" type="date" name="fecha" ng-model="">
+											</div>
+										</div>
+									</form></td>
+									<td  align="right">
+										<p><label class="control-label">Nombre Empresa</label></p>
+										<p><label class="control-label">Domicilio</label></p>
+										<p><label class="control-label">Cuidad</label></p>
+										<p><label class="control-label">NIF</label></p>
+									</tr>
+								</table>
+							</th>
+						</tr>
+						<tr>
+							<td colspan="7"  align="center">
+								<form class="form-horizontal" role="form">
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Cliente:</label>
+										<div class="col-xs-3">
+											<input class="form-control"  name="Cliente" id="Cliente" value="" type="text" placeholder="# de Cliente" ng-model="">
+										</div>
+										<label class="col-lg-3 control-label">F.I.F.:</label>
+										<div class="col-xs-3">
+											<input class="form-control"  name="NIF" id="NIF" value="" type="text" placeholder="# de NIF" ng-model="">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-lg-3 control-label">Domicilio:</label>
+										<div class="col-xs-3">
+											<input class="form-control"  name="Domicilio" id="Domicilio" value="" type="text" placeholder="Domicilio" ng-model="">
+										</div>
+										<label class="col-lg-3 control-label">Ciudad:</label>
+										<div class="col-xs-3">
+											<input class="form-control"  name="Ciudad" id="Ciudad" value="" type="text" placeholder="Ciudad" ng-model="">
+										</div>
+									</div>
+								</form></td>
+							</tr>
+							<tr>
+								<td width="14%" align="center"><strong>Código</strong></td>
+								<td width="16%" align="center"><strong>Articulo</strong></td>
+								<td width="18%" align="center"><strong>Unidades</strong></td>
+								<td width="15%" align="center"><strong>Precio</strong> </td>
+								<td width="15%" align="center"><strong>Subtotal</strong></td>
+								<td width="10%" align="center"><strong>% IVA</strong></td>
+								<td width="12%" align="center"><strong>Total con IVA</strong></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td colspan="7"  align="right">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label class="col-lg-3 control-label">Subtotal:</label>
+											<div class="col-xs-3">
+												<input class="form-control"   name="Subtotal" id="Subtotal" value="" type="text" placeholder="Subtotal" ng-model="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">Descuento:</label>
+											<div class="col-xs-3">
+												<input class="form-control"  name="Descuento" id="Descuento" value="" type="text" placeholder="Descuento" ng-model="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">I.V.A.:</label>
+											<div class="col-xs-3">
+												<input class="form-control"  name="IVA" id="IVA" value="" type="text" placeholder="I.V.A." ng-model="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">Recargo Equivalencia:</label>
+											<div class="col-xs-3">
+												<input class="form-control"  name="RE" id="RE" value="" type="text" placeholder="Recargo Equivalencia" ng-model="">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">Total Factura:</label>
+											<div class="col-xs-3">
+												<input class="form-control"  name="Total" id="Total" value="" type="text" placeholder="Total Factura" ng-model="">
+											</div>
+										</div>
+									</form></td>
+								</tr>
+							</table>
+						</body>
+					</html>
