@@ -56,20 +56,5 @@ app.controller("AccessController", function($scope, $auth, $http)
 	$scope.logout = function()
 	{
 		$auth.logout();
-		alert("out");
-	}
-
-	$scope.test = function()
-	{
-		$http.get(api + valid_endpoints.authtest).
-		then(function(response)
-		{
-			var data = response.data;
-			alert(data);
-		},
-		function(response)
-		{
-			console.log(response);
-		});
 	}
 });
