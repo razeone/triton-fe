@@ -1,0 +1,31 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "Auth JS controllers",
+  "repository": "https://github.com/razeone/triton-fe.git",
+  "main": "main.js",
+  "scripts": {
+    "build": "npm run build-static",
+    "build-static": "browserify -t browserify-css js/main.js > js/bundle.js",
+    "build-min-js": "browserify public/js/app.js | uglifyjs -o public/build/app.min.js",
+    "build-min-css": "cleancss -o css/main.css css/bundle.css"
+  },
+  "author": "Jorge Raze",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "browserify-css": "^0.9.0",
+    "clean-css": "^3.4.9",
+    "uglifyjs": "^2.4.10"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootstrap-material-design": "^0.5.8",
+    "jquery": "^2.2.1",
+    "angular": "^1.5.0",
+    "satellizer": "^0.14.0"
+  },
+  "browserify-css": {
+        "minify": true
+  }
+}
