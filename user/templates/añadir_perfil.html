@@ -3,18 +3,31 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Perfil de Usuario</title>
-        <link rel="icon" type="image/png" href="images/Tridente.ico" />
-        <!-- bootstrap -->
-        <!-- Let's try to keep common js and css from public CDN at the begining -->
+        <title>Añadir perrfil de Usuario</title>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script type="text/javascript" src="../js/bundle.js"></script>
     </head>
     <body ng-controller="">
+        <!--Header-->
+        <!--<header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                        <h1 class="texto tamtex1"> Header </h1>
+                        <h5 class="texto tamtex2"><!-- Text --></h5>
+                    <!--</div>
+                    <div class="hidden-xs col-sm-6 col-md-4 col-lg-4 centrar">
+                        <a href="#"><img src="" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end Header -->
+
         <div class="container" style="padding-top:10px;">
-            <h1 class="page-header">Perfil</h1>
+            <h1 class="page-header">Nuevo Perfil</h1>
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-                    <h3>Información Personal</h3><br>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
                             <!-- Tipo de perfil radio-->
@@ -22,12 +35,13 @@
                             <div class="col-lg-8">
                                 <input type="radio" name="GrupoOpciones1" value="Si" id="GrupoOpciones1_0" onClick="document.getElementById('razon_social').disabled=true;
                                 document.getElementById('Giro').disabled=true;
+
                                 document.getElementById('nombre').disabled=false;document.getElementById('edo_civil').disabled=false;document.getElementById('RFC').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false;document.getElementById('Patrimonio').disabled=false;
-                                document.getElementById('fecha').disabled=false;"/> Persona Fisica
+                                "/> Persona Fisica
     
                                 <input type="radio" name="GrupoOpciones1" value="No" id="GrupoOpciones1_1" onClick="document.getElementById('razon_social').disabled=false;
-                                document.getElementById('Giro').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false; document.getElementById('Patrimonio').disabled=false;document.getElementById('fecha').disabled=false;
-                                document.getElementById('nombre').disabled=true;document.getElementById('edo_civil').disabled=true;"/> Persona moral
+                                document.getElementById('Giro').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false; document.getElementById('Patrimonio').disabled=false;
+                                document.getElementById('nombre').disabled=true;document.getElementById('edo_civil').disabled=true;document.getElementById('Patrimonio').disabled=true;"/> Persona moral
                             </div><!-- end radio-->
                         </div>
                         <div class="form-group">
@@ -78,19 +92,14 @@
                                 <input type="text" name="Giro" id="Giro" class="form-control" value="" placeholder="Giro" disabled ng-model="" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">Fecha de creación:</label>
-                            <div class="col-md-3">
-                                <input  class="form-control" type="date" name="fecha" id="fecha" disabled ng-model="" />
-                            </div>
-                        </div>
+                        
                         <hr class="colorgraph">
                         <div class="row" align="center">
                             <div class="col-xs-6 col-md-6">
-                                <a href="perfil.html"><input type="button" class="btn btn-primary" value="Crear perfil" aling="right" ng-click=""></a>
+                                <a href="#"><input type="button" class="btn btn-primary" value="Crear perfil" aling="right" ng-click=""></a>
                             </div>
                             <div class="col-xs-6 col-md-6">
-                                <a href="../index.html"><input class="btn btn-danger" value="Cancelar" type="button" ng-click=""></a>
+                                <a href="#"><input class="btn btn-danger" value="Cancelar" type="button" ng-click=""></a>
                             </div>
                         </div>
                     </form>
@@ -98,6 +107,13 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="../js/bundle.js"></script>
+
+        <!-- Footer -->
+        <!--<footer class="page-footer">
+            <div class="container"><br>
+                <p align="center"><p>&copy; Triton 2016</p></p>
+                </br></div>
+            </div>
+        </footer>-->
     </body>
 </html>
