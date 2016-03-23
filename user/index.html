@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html data-ng-app="App">
+<html ng-app="App">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-s		<title></title>
+		<title>Triton</title>
 	</head>
-	<body ng-controller="AccessController">
+	<body>
+
 		<!--Header-->
 		<header>
 			<div class="container">
@@ -21,36 +22,13 @@ s		<title></title>
 			</div>
 		</header>
 		<!-- end Header -->
-		
-		<!-- log in-->
+
+		<!-- Content -->
 		<div class="container">
-			<div class="col-md-4">
-			</div>
-			<div class="col-md-4">
-				<h1 div class="text-center">Ingresar</h1>
-				<div class="col-md-12">
-					<form class="center-block form-horizontal">
-						<div class="form-group">
-							<input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="">
-						</div>
-						<div class="form-group">
-							<input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="">
-						</div>
-						<div class="form-group" align="right">
-							<input type="checkbox" name="rememberme" id="rememberme"> Recuérdame
-						</div>
-						<div class="form-group">
-							<a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton" ng-click="signup()" >Regístrate</a>
-							<a class="btn btn-lg btn-success btn-raised" id="registerButton" ng-click="login()">Ingresar</a>
-						</div>
-					</form>
-					<div class="col-md-12 text-center">
-						<a href="#">¿Olvidaste tu contraseña?</a>
-					</div>
-				</div>
-			</div>
+			<div ng-view></div>
 		</div>
-		<!-- end log in-->
+		<!-- end Content -->
+
 		<!-- Footer -->
 		<footer class="page-footer">
 			<div class="container"><br>
@@ -58,6 +36,8 @@ s		<title></title>
 				</br></div>
 			</div>
 		</footer>
-		<script type="text/javascript" src="../js/bundle.js"></script>
+		<!-- end Footer -->
+
+		<script type="text/javascript" src="./js/bundle.js"></script>
 	</body>
 </html>
