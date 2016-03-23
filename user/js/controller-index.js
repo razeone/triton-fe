@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.controller("IndexController", function($scope, $auth, $http)
+app.controller("IndexController", function($scope, $location, $auth, $http)
 {
 
 });

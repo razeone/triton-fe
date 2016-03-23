@@ -49,9 +49,4 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 			}
 		});
 	}
-
-	$scope.logout = function()
-	{
-		$auth.logout();
-	}
 });

@@ -1,4 +1,7 @@
 <div class="container" style="padding-top:10px;">
+
+    <div ng-include="'templates/menu.html'"></div>
+
     <h1 class="page-header">Nuevo Perfil</h1>
     <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
@@ -11,7 +14,7 @@
                         document.getElementById('Giro').disabled=true;
                         document.getElementById('nombre').disabled=false;document.getElementById('edo_civil').disabled=false;document.getElementById('RFC').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false;document.getElementById('Patrimonio').disabled=false;
                         "/> Persona Fisica
-                        
+
                         <input type="radio" name="GrupoOpciones1" value="No" id="GrupoOpciones1_1" onClick="document.getElementById('razon_social').disabled=false;
                         document.getElementById('Giro').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false; document.getElementById('Patrimonio').disabled=false;
                         document.getElementById('nombre').disabled=true;document.getElementById('edo_civil').disabled=true;document.getElementById('Patrimonio').disabled=true;"/> Persona moral

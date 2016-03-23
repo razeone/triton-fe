@@ -9,8 +9,12 @@ var accessEndpoints =
 
 var navigation =
 {
-	index: "./templates/index.html",
-	login: "./templates/login.html"
+	login: "templates/login.html",
+	signup: "templates/signup.html",
+	index: "templates/index.html",
+	profiles: "templates/profiles.html",
+	add_profile: "templates/add_profile.html",
+	billing: "templates/billing.html"
 };
 
 app.config(function($routeProvider, $authProvider)
@@ -33,7 +37,32 @@ app.config(function($routeProvider, $authProvider)
 		controller: "AccessController",
 		resolve:{ skipIfLoggedIn: skipIfLoggedIn }
 	})
-	.otherwise({
+	.when("/signup",
+	{
+		templateUrl: navigation.signup,
+		controller: "AccessController",
+		resolve:{ skipIfLoggedIn: skipIfLoggedIn }
+	})
+	.when("/profiles",
+	{
+		templateUrl: navigation.profiles,
+		controller: "IndexController",
+		resolve: { loginRequired: loginRequired }
+	})
+	.when("/add_profiles",
+	{
+		templateUrl: navigation.add_profile,
+		controller: "IndexController",
+		resolve: { loginRequired: loginRequired }
+	})
+	.when("/billing",
+	{
+		templateUrl: navigation.billing,
+		controller: "IndexController",
+		resolve: { loginRequired: loginRequired }
+	})
+	.otherwise
+	({
 		redirectTo: "/"
 	});
 
@@ -46,7 +75,7 @@ app.config(function($routeProvider, $authProvider)
       }
 		else
 		{
-			$location.path("/");
+			deferred.resolve();
       }
       return deferred.promise;
     }

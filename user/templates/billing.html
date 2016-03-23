@@ -1,28 +1,31 @@
 <div class="container" style="padding-top:10px;">
+
+    <div ng-include="'templates/menu.html'"></div>
+
     <h1 class="page-header">Datos para obtener su factura</h1>
     <form class="form-horizontal" role="form">
         <div class="form-group">
             <label class="col-lg-3 control-label">Tienda:*</label>
             <div class="col-xs-3">
-                <input class="form-control"  name="tienda" id="tienda" value="" type="text" placeholder=" # Tienda" ng-model="">
+                <input class="form-control"  name="tienda" id="tienda" value="" type="text" placeholder=" # Tienda" ng-model="tienda">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Numero de Ticket:*</label>
             <div class="col-xs-3">
-                <input class="form-control"  name="ticket" id="ticket" value="" type="text" placeholder=" # Ticket" ng-model="">
+                <input class="form-control"  name="ticket" id="ticket" value="" type="text" placeholder=" # Ticket" ng-model="ticket">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Fecha:*</label>
             <div class="col-xs-3">
-                <input  class="form-control" type="date" name="fecha" ng-model="">
+                <input  class="form-control" type="date" name="fecha" ng-model="fecha">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Total:*</label>
             <div class="col-xs-3">
-                <input class="form-control"  name="total" id="total" value="" type="text" placeholder=" Total" ng-model="">
+                <input class="form-control"  name="total" id="total" value="" type="text" placeholder=" Total" ng-model="total">
             </div>
         </div>
         <div class="form-group col-lg-5" >
