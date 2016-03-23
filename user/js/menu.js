@@ -7,24 +7,17 @@ angular.module('menu', ['ngRoute'])
       })
       .when('/facturar',{
       controller: 'ControladorFacturar',
-      templateUrl: 'facturar.html'
+      templateUrl: 'billing.html'
     })
     .when('/perfiles',{
       controller: 'ControladorPerfiles',
-      templateUrl: 'Perfiles.html'
+      templateUrl: 'profiles.html'
     })
-    .when('/AddPerfil',{
+    .when('/addperfil',{
       controller: 'ControladorAddPerfil',
-      templateUrl: 'añadir_perfil.html'
+      templateUrl: 'add_profile.html'
     })
       .otherwise({
         redirectTo: '/'
       });
-  })
-
-/*
-.when('/', {
-        templateUrl: 'slider.html'
-      })
-
-*/
+  });

@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html data-ng-app="">
+<html data-ng-app="App">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <script type="text/javascript" src="../js/bundle.js"></script>
-
-        <script src="./js/menu.js"></script>
+s		<title></title>
 	</head>
-	<body ng-controller="">
+	<body ng-controller="AccessController">
 		<!--Header-->
 		<header>
 			<div class="container">
@@ -43,9 +39,9 @@
 						<div class="form-group" align="right">
 							<input type="checkbox" name="rememberme" id="rememberme"> Recuérdame
 						</div>
-						<div class="form-group">							
-							<a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton" >Regístrate</a>
-							<a class="btn btn-lg btn-success btn-raised" id="registerButton" ng-click="">Ingresar</a>
+						<div class="form-group">
+							<a class="btn btn-lg btn-primary pull-right btn-raised" id="loginButton" ng-click="signup()" >Regístrate</a>
+							<a class="btn btn-lg btn-success btn-raised" id="registerButton" ng-click="login()">Ingresar</a>
 						</div>
 					</form>
 					<div class="col-md-12 text-center">
@@ -53,11 +49,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-			</div>
-		</div> 
+		</div>
 		<!-- end log in-->
-
 		<!-- Footer -->
 		<footer class="page-footer">
 			<div class="container"><br>
@@ -65,5 +58,6 @@
 				</br></div>
 			</div>
 		</footer>
-</body>
+		<script type="text/javascript" src="../js/bundle.js"></script>
+	</body>
 </html>
