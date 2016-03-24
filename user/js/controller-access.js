@@ -16,7 +16,6 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 
 			if(data.success)
 			{
-				alert("access granted");
 				$location.path("/");
 			}
 			else
@@ -40,7 +39,6 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 
 			if(data.success)
 			{
-				alert("user created");
 				$location.path("/");
 			}
 			else
