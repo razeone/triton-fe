@@ -2,7 +2,7 @@
 	<div class="col-md-4">
 	</div>
 	<div class="col-md-4">
-		<h1 div class="text-center">Ingresar</h1>
+		<h1 class="text-center">Ingresar</h1>
 		<div class="col-md-12">
 			<form class="center-block form-horizontal">
 				<div class="form-group">
@@ -12,11 +12,12 @@
 					<input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="password">
 				</div>
 				<div class="form-group" align="right">
-					<input type="checkbox" name="rememberme" id="rememberme"> Recuérdame
+					<input type="checkbox" name="rememberme" id="rememberme">  <label for="rememberme">Recuérdame</label>
 				</div>
 				<div class="form-group">
-					<a class="btn btn-lg btn-primary pull-right btn-raised" id="registerButton" href="#signup" >Regístrate</a>
-					<a class="btn btn-lg btn-success btn-raised" id="loginButton" ng-click="login()">Ingresar</a>
+					<a class="btn btn-lg btn-success pull-right btn-raised" id="loginButton" ng-click="login()">Ingresar</a>
+                    <a class="btn btn-lg btn-primary btn-raised" id="registerButton" href="#signup" >Regístrate</a>
+					
 				</div>
 			</form>
 			<div class="col-md-12 text-center">

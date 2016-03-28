@@ -3,14 +3,20 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-5">
-        <h2 align="left">Registro</h2><br>
+        <h1 class="text-center">Registro</h1>
         <div class="col-md-12">
             <form class="center-block form-horizontal">
                 <div class="form-group">
                     <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo Electronico" tabindex="5" ng-model="username">
+                </div>
+                <div class="form-group">
                     <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" tabindex="6" ng-model="password">
+                </div>
+                <div class="form-group">
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirmar Contraseña" tabindex="7" ng-model="confirm">
-                     <input type="checkbox" value="acepto" onclick="Registrarse.disabled = !this.checked" ng-click="" ng-model="" name="rememberme"> <label for="rememberme">Estoy de acuerdo</label>
+                </div>
+                <div class="form-group">
+                     <input type="checkbox" value="acepto" ng-click="agreement=true" ng-model="agreement" name="agreement"> <label for="agreement">Estoy de acuerdo</label>
                 </div>
                 <div class="col-md-12">
                     Al hacer clic en <strong class="label label-success">Registrar</strong>,
