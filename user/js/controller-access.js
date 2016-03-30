@@ -6,8 +6,11 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 	{
 		$scope.credentials =
 		{
-			username: $scope.username,
+			email: $scope.email,
 			password: $scope.password
+		}
+		$scope.headers = {
+			"Content-Type": "application/json"
 		}
 
 		$auth.login($scope.credentials).then(function(response)
@@ -29,7 +32,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 	{
 		$scope.credentials =
 		{
-			username: $scope.username,
+			username: $scope.email,
 			password: $scope.password
 		}
 
