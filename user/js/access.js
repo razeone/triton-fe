@@ -1,13 +1,13 @@
 var app = angular.module("App", ["satellizer"]);
 
-var api = 'http://localhost:8085'
+var api = 'http://localhost:8085';
 
 var valid_endpoints =
 {
 	'login': '/auth/login',
 	'signup': '/auth/signup',
 	'authtest': '/auth/test'
-}
+};
 
 app.config(function($authProvider)
 {
@@ -25,7 +25,7 @@ app.controller("AccessController", function($scope, $auth, $http)
 		{
 			username: $scope.username,
 			password: $scope.password
-		}
+		};
 
 		$auth.login($scope.credentials).then(function(response)
 		{
@@ -34,7 +34,7 @@ app.controller("AccessController", function($scope, $auth, $http)
 			if(data.success) alert("access granted");
 			else alert(data.error);
 		});
-	}
+	};
 
 	$scope.signup = function()
 	{
@@ -42,7 +42,7 @@ app.controller("AccessController", function($scope, $auth, $http)
 		{
 			username: $scope.username,
 			password: $scope.password
-		}
+		};
 
 		$auth.signup($scope.credentials).then(function(response)
 		{
@@ -51,10 +51,10 @@ app.controller("AccessController", function($scope, $auth, $http)
 			if(data.success) alert("user created");
 			else alert(data.error);
 		});
-	}
+	};
 
 	$scope.logout = function()
 	{
 		$auth.logout();
-	}
+	};
 });

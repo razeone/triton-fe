@@ -1,4 +1,15 @@
-@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
-@import url(../node_modules/bootstrap/dist/css/bootstrap-theme.min.css);
-@import url(../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css);
-@import url(../node_modules/bootstrap-material-design/dist/css/ripples.min.css);
+nput:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px transparent inset;
+  /* Change the color to your own background color */
+  -webkit-text-fill-color: #333; }
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px transparent inset;
+  -webkit-text-fill-color: #333; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset; }
