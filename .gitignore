@@ -1,2 +1,6 @@
 node_modules/
 user/js/bundle.js
+user/css/bundle.css
+user/.sass-cache/
+user/css/*.css.map
+
