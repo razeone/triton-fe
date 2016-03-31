@@ -6,7 +6,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 	{
 		$scope.credentials =
 		{
-			username: $scope.username,
+			email: $scope.email,
 			password: $scope.password
 		};
 
@@ -29,7 +29,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 	{
 		$scope.credentials =
 		{
-			username: $scope.username,
+			email: $scope.email,
 			password: $scope.password
 		};
 
