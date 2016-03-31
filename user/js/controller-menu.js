@@ -7,5 +7,5 @@ app.controller("MenuController", function($scope, $location, $auth, $http)
 		console.log("logout");
 		$auth.logout();
 		$location.path("/login");
-	}
+	};
 });

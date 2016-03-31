@@ -8,7 +8,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 		{
 			username: $scope.username,
 			password: $scope.password
-		}
+		};
 
 		$auth.login($scope.credentials).then(function(response)
 		{
@@ -23,7 +23,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 				alert(data.error);
 			}
 		});
-	}
+	};
 
 	$scope.signup = function()
 	{
@@ -31,7 +31,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 		{
 			username: $scope.username,
 			password: $scope.password
-		}
+		};
 
 		$auth.signup($scope.credentials).then(function(response)
 		{
@@ -46,5 +46,5 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 				alert(data.error);
 			}
 		});
-	}
+	};
 });
