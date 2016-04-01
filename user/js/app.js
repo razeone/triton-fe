@@ -1,11 +1,10 @@
-// Angular
 var app = angular.module("App", ["ngRoute", "satellizer"]);
 
-var accessAPI = 'http://localhost/v1';
+var accessAPI = 'http://localhost:8085';
 var accessEndpoints =
 {
-	login: "/auth/login/",
-	signup: "/auth/signup/"
+	login: "/auth/login",
+	signup: "/auth/signup"
 };
 
 var navigation =
