@@ -10,7 +10,12 @@
                         <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="password" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" name="rememberme" id="rememberme"> Recuérdame
+                        <div class="checkbox">
+                            <label for="rememberme">
+                            <input type="checkbox" id="rememberme" name="rememberme" value="rememberme">
+                            <span class="checkbox-material"><span class="check"></span></span>
+                            Recuérdame</label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <a class="btn btn-block btn-success btn-raised" id="loginButton" ng-click="login()">Ingresar</a>

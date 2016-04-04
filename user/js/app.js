@@ -29,7 +29,7 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.index,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
 	})
 	.when("/login",
 	{
@@ -47,19 +47,19 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.profiles,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
 	})
 	.when("/add_profiles",
 	{
 		templateUrl: navigation.add_profile,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn }//loginRequired
 	})
 	.when("/billing",
 	{
 		templateUrl: navigation.billing,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn }//loginRequired
 	})
 	.otherwise
 	({
