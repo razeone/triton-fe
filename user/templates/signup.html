@@ -1,5 +1,5 @@
 <!-- log in-->
-<div class="container">
+<div class="container" ng-controller="addProfController">
     <div class="col-sm-5 col-sm-offset-3">
         <h2 align="center">Registro</h2><br>
         <div class="row">
@@ -17,39 +17,39 @@
                     <div class="form-group">
                         <div class="checkbox">
                             <label for="ok">
-                            <input type="checkbox" id="ok" value="acepto" onclick="Registrarse.disabled = !this.checked" ng-click="">
+                            <input type="checkbox" id="ok" value="acepto" ng-model="register">
                             <span class="checkbox-material"><span class="check"></span></span>
                             Estoy de acuerdo</label>
                         </div>
                     </div>
-                            <p>Al hacer clic en <span class="label bold label-success">Registrar</span>,
-                            usted acepta los <a href="#" data-toggle="modal" data-target="#t_and_c_m">
+                            <p>Al hacer clic en <span class="label bold label-primary">Registrar</span>,
+                            usted acepta los <a href="" data-toggle="modal" ng-click="toggleModal()">
                             Términos y Condiciones</a> establecidos por este sitio.</p>
                     <hr class="colorgraph">
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
-                            <input type="submit" value="Registrarse" name="Registrarse" class="btn btn-primary btn-lg" tabindex="7" disabled  ng-click="signup()">
+                            <input type="button" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="!register"  ng-click="signup()">
                         </div>
                         <div class="col-xs-6 col-md-6">
-                            <input type="button" class="btn btn-danger btn-lg" ng-click="go(login)" value="Cancelar">
+                            <input type="button" class="btn btn-danger btn-lg btn-raised" ng-click="go(login)" value="Cancelar">
                         </div>
                     </div>
                 </form>
             </div>
             <!--Terminos & condiciones-->
-            <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="t_and_c_m" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h4 class="modal-title" id="myModalLabel">Terminos & Condiciones</h4>
+                            <h4 class="modal-title" id="myModalLabel">Terminos y Condiciones</h4>
                         </div>
                         <div class="modal-body">
                             <p>Al hacer clic en Registro, usted acepta los términos y condiciones
                                 establecidos por este sitio, incluyendo nuestro uso de cookies.
                         </div>
                         <div class="modal-footer">
-                                <input type="button" href="#" class="btn btn-primary" value="De acuerdo" onclick=""/>
+                                <input type="button" href="#" class="btn btn-primary" value="Cerrar" data-dismiss="modal" aria-hidden="true"/>
                         </div>
                     </div>
                 </div>
