@@ -59,7 +59,7 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.billing,
 		controller: "IndexController",
-		resolve: { loginRequired: skipIfLoggedIn }//loginRequired
+		resolve: { skipIfLoggedIn: skipIfLoggedIn }//loginRequired
 	})
 	.otherwise
 	({
