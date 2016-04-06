@@ -47,4 +47,8 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 			}
 		});
 	};
+
+   $scope.go = function (url) {
+      $location.path(url);
+	};
 });

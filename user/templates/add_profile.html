@@ -1,41 +1,66 @@
-<div class="container" style="padding-top:10px;">
+<div class="container" style="padding-top:10px;" ng-controller="addProfController">
 
     <div ng-include="'templates/menu.html'"></div>
 
-    <h1 class="page-header">Nuevo Perfil</h1>
     <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-2 personal-info well">
+            <h1 class="text-center">Nuevo Perfil</h1>
+            <form class="" role="form">
                     <!-- Tipo de perfil radio-->
-                    <label class="col-lg-3 control-label">Tipo de Perfil</label>
-                    <div class="col-lg-6">
-                        <input type="radio" name="GrupoOpciones1" value="Si" id="GrupoOpciones1_0" onClick="document.getElementById('razon_social').disabled=true;
-                        document.getElementById('Giro').disabled=true;
-                        document.getElementById('nombre').disabled=false;document.getElementById('edo_civil').disabled=false;document.getElementById('RFC').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false;document.getElementById('Patrimonio').disabled=false;
-                        "/> Persona Fisica
+                <div class="row form-group">
+                    <label class="col-md-3 control-label">Tipo de Perfil</label>
+                    <div class="col-md-8">
+                      <div class="radio radio-primary">
+                        <label>
+                          <input type="radio" name="person" id="fisica" value="fisica" ng-model="radioPerson"><span class="circle"></span><span class="check"></span>
+                          Persona Fisica
+                        </label>
+                      </div>
+                      <div class="radio radio-primary">
+                        <label>
+                          <input type="radio" name="person" id="moral" value="moral" ng-model="radioPerson" ><span class="circle"></span><span class="check"></span>
+                             Persona moral
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <!-- <input type="radio" name="GrupoOpciones1" value="Si" id="GrupoOpciones1_0" onClick="
+                document.getElementById('nombre').disabled=false;
+                document.getElementById('Nacionalidad').disabled=false;
+                document.getElementById('edo_civil').disabled=false;
+                document.getElementById('razon_social').disabled=true;
+                document.getElementById('RFC').disabled=false;
+                document.getElementById('Domicilio').disabled=false;
+                document.getElementById('Patrimonio').disabled=false;
+                document.getElementById('Giro').disabled=true;
+                "/> Persona Fisica
 
-                        <input type="radio" name="GrupoOpciones1" value="No" id="GrupoOpciones1_1" onClick="document.getElementById('razon_social').disabled=false;
-                        document.getElementById('Giro').disabled=false;document.getElementById('Nacionalidad').disabled=false;document.getElementById('Domicilio').disabled=false; document.getElementById('Patrimonio').disabled=false;
-                        document.getElementById('nombre').disabled=true;document.getElementById('edo_civil').disabled=true;document.getElementById('Patrimonio').disabled=true;"/> Persona moral
-                    </div><!-- end radio-->
-                </div>
-                <div class="form-group">
+                <input type="radio" name="GrupoOpciones1" value="No" id="GrupoOpciones1_1" onClick="
+                document.getElementById('nombre').disabled=true;
+                document.getElementById('Nacionalidad').disabled=false;
+                document.getElementById('edo_civil').disabled=true;
+                document.getElementById('razon_social').disabled=false;
+                document.getElementById('Domicilio').disabled=false;
+                document.getElementById('Giro').disabled=false;
+                document.getElementById('Patrimonio').disabled=false;
+                document.getElementById('Patrimonio').disabled=true;"/> Persona moral -->
+                <!-- end radio-->
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
-                    <div class="col-lg-6">
-                        <input class="form-control" type="text" name="nombre" id="nombre" value="" placeholder="Nombre completo" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" name="nombre" id="nombre" value="" placeholder="Nombre completo" ng-disabled="radioPerson != 'fisica'" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Nacionalidad:</label>
-                    <div class="col-lg-6">
-                        <input class="form-control" name="Nacionalidad" id="Nacionalidad" value="" type="text" placeholder="Nacionalidad" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input class="form-control" name="Nacionalidad" id="Nacionalidad" value="" type="text" placeholder="Nacionalidad" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Estado Civil:</label>
-                    <div class="col-lg-6">
-                        <select class="form-control" name="edo_civil" id="edo_civil" disabled >
+                    <div class="col-lg-9">
+                        <select class="form-control" name="edo_civil" id="edo_civil" ng-disabled="radioPerson != 'fisica'">
                             <option selected>Estado Civil </option>
                             <option value="Soltero/a">Soltero/a</option>
                             <option value="Casado/a">Casado/a</option>
@@ -44,34 +69,34 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Razón Social:</label>
-                    <div class="col-lg-6">
-                        <input type="text" class="form-control"  name="razon_social" id="razon_social" value=""placeholder="Razón Social" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control"  name="razon_social" id="razon_social" value="" placeholder="Razón Social"  ng-disabled="radioPerson != 'moral'" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">RFC:</label>
-                    <div class="col-lg-6">
-                        <input class="form-control" name="RFC" id="RFC" value="" type="text" placeholder="RFC" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input class="form-control" name="RFC" id="RFC" value="" type="text" placeholder="RFC" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Domicilio:</label>
-                    <div class="col-lg-6">
-                        <input class="form-control" name="Domicilio" id="Domicilio" value="" type="text" placeholder="Domicilio" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input class="form-control" name="Domicilio" id="Domicilio" value="" type="text" placeholder="Domicilio"/>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Patrimonio:</label>
-                    <div class="col-lg-6">
-                        <input class="form-control" name="Patrimonio" value="" id="Patrimonio" type="text" placeholder="Patrimonio" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input class="form-control" name="Patrimonio" value="" id="Patrimonio" type="text" placeholder="Patrimonio" ng-disabled="radioPerson != 'fisica'"/>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="row form-group">
                     <label class="col-lg-3 control-label">Giro:</label>
-                    <div class="col-lg-6">
-                        <input type="text" name="Giro" id="Giro" class="form-control" value="" placeholder="Giro" disabled ng-model="" />
+                    <div class="col-lg-9">
+                        <input type="text" name="Giro" id="Giro" class="form-control" value="" placeholder="Giro" ng-disabled="radioPerson != 'moral'"/>
                     </div>
                 </div>
                 <hr class="colorgraph">

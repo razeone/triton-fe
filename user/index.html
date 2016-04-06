@@ -3,71 +3,43 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Triton</title>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-      <div class="col-sm-4 col-sm-offset-4">
-        <div class="text-center">
-            <img height="100" width="100" alt="Login image" class="img-responsive center-block" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==">
-        </div>
-        <h1 div class="text-center">Ingresar</h1>
-        <div class="col-md-12">
-          <form class="center-block form-horizontal" autocomplete="off">
-                <div class="form-group">
-                    <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label for="rememberme">Recuérdame</label>
-                    <input type="checkbox" class="form-control input-lg" name="rememberme" id="rememberme" autocomplete="off">
-                </div>
-                <div class="form-group text-center">
-                    <a class="btn btn-lg btn-success btn-raised" id="registerButton">Regístrate</a>
-                    <a class="btn btn-lg btn-primary btn-raised" id="loginButton">Iniciar Sesión</a>
-                </div>
-          </form>
-          <div class="col-md-12 text-center">
-            <a href="#">¿Olvidaste tu contraseña?</a>
-          </div>
-        </div>
-      </div>
-      <script type="text/javascript" src="js/bundle.js"></script>
-    </body>
+
+		<!--Header-->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+						<h1 class="texto tamtex1"> Header </h1>
+						<h5 class="texto tamtex2"><!-- Text --></h5>
+					</div>
+					<div class="hidden-xs col-sm-6 col-md-4 col-lg-4 centrar">
+						<a href="#"><img src="" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- end Header -->
+
+		<!-- Content -->
+		<div class="container">
+			<div ng-view></div>
+		</div>
+		<!-- end Content -->
+
+		<!-- Footer -->
+		<footer class="page-footer">
+			<div class="container"><br>
+				<p align="center"><p>&copy; Triton 2016</p></p>
+				</br></div>
+			</div>
+		</footer>
+		<!-- end Footer -->
+
+		<script type="text/javascript" src="./js/bundle.js"></script>
+	</body>
 </html>

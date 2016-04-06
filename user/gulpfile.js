@@ -61,7 +61,7 @@ gulp.task('css', function () {
       'sass/main.scss'
     )
     //.pipe($.changed('css', {extension: '.scss'}))
-    .pipe(sass()
+    .pipe(sass({compass:true})
       .on('error', console.error.bind(console))
     )
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))

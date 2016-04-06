@@ -1,11 +1,10 @@
-// Angular
 var app = angular.module("App", ["ngRoute", "satellizer"]);
 
-var accessAPI = 'http://localhost/v1';
+var accessAPI = 'http://localhost:8085/v1';
 var accessEndpoints =
 {
-	login: "/auth/login/",
-	signup: "/auth/signup/"
+	login: "/auth/login",
+	signup: "/auth/users"
 };
 
 var navigation =
@@ -30,7 +29,7 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.index,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
 	})
 	.when("/login",
 	{
@@ -48,19 +47,19 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.profiles,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
 	})
 	.when("/add_profiles",
 	{
 		templateUrl: navigation.add_profile,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { loginRequired: skipIfLoggedIn }//loginRequired
 	})
 	.when("/billing",
 	{
 		templateUrl: navigation.billing,
 		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
+		resolve: { skipIfLoggedIn: skipIfLoggedIn }//loginRequired
 	})
 	.otherwise
 	({
