@@ -8,4 +8,10 @@ app.controller("MenuController", function($scope, $location, $auth, $http)
 		$auth.logout();
 		$location.path("/login");
 	};
+
+
+    $scope.navClass = function (page) {
+        var currentRoute = $location.path().substring(1) || 'index';
+        return page == currentRoute ? 'active' :'';
+    }
 });

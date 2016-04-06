@@ -7,11 +7,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="javascript:void(0)"><span class="glyphicon glyphicon-home"></span></a>
+      <a class="navbar-brand" ng-class="navClass('index')" ng-href="#/"><span class="glyphicon glyphicon-home"></span></a>
     </div>
     <div class="navbar-collapse collapse navbar-inverse-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="javascript:void(0)">Active</a></li>
+        <li ng-class="navClass('add_profiles')"><a ng-href="#/add_profiles">Agregar Perfiles</a></li>
+        <li ng-class="navClass('billing')"><a ng-href="#/billing">Facturación</a></li>
         <!--<li><a href="javascript:void(0)">Link</a></li>-->
 <!--
         <li class="dropdown">
