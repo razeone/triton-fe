@@ -5,6 +5,7 @@ var bootstrap_material_design = require('bootstrap-material-design');
 var ripples = require ('../node_modules/bootstrap-material-design/dist/js/ripples.js');
 var angular = require('angular');
 var angular_route = require('angular-route');
+var toaster = require('angularjs-toaster');
 var satellizer = require('satellizer');
 $.material.init();
 //require('../css/main.css');

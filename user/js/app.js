@@ -1,4 +1,4 @@
-var app = angular.module("App", ["ngRoute", "satellizer"]);
+var app = angular.module("App", ["ngRoute", "toaster", "satellizer"]);
 
 var accessAPI = 'http://localhost:8085/v1';
 var accessEndpoints =

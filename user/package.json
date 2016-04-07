@@ -49,6 +49,7 @@
     "jquery": "^2.2.1",
     "angular": "^1.5.2",
     "angular-route": "^1.5.2",
+    "angularjs-toaster": "*",
     "satellizer": "^0.14.0"
   },
   "browserify-css": {

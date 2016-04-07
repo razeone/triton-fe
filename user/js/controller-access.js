@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.controller("AccessController", function($scope, $location, $auth, $http)
+app.controller("AccessController", function($scope, $location, $auth, $http, toaster)
 {
 	$scope.login = function()
 	{
@@ -14,14 +14,18 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 		{
 			var data = response.data;
 
-			if(data.success)
+			if(!data.success)
 			{
-				$location.path("/");
+				showError(data.error);
+				return;
 			}
-			else
-			{
-				alert(data.error);
-			}
+
+			showMessage("access granted");
+			$location.path("/");
+		},
+		function(response)
+		{
+			showError(response.data.error);
 		});
 	};
 
@@ -37,22 +41,45 @@ app.controller("AccessController", function($scope, $location, $auth, $http)
 		{
 			var data = response.data;
 
-			if(data.success)
+			if(!data.success)
 			{
-				$location.path("/");
+				showError(data.error);
+				return;
 			}
-			else
-			{
-				alert(data.error);
-			}
+
+			showMessage("check your inbox");
+			$location.path("/");
+		},
+		function(response)
+		{
+			showError(response.data.error);
 		});
 	};
 
-   $scope.go = function (url) {
+   $scope.go = function(url)
+	{
       $location.path(url);
 	};
 
-    $scope.toggleModal = function(){
-        $('#t_and_c_m').modal();
-    };
+	$scope.toggleModal = function()
+	{
+		$('#t_and_c_m').modal();
+	};
+
+	function showMessage(message, type)
+	{
+		var showtype = type ? type : "alert";
+		toaster.pop
+		({
+			type: showtype,
+			body: message,
+			showCloseButton: true,
+			timeout: 3000
+		});
+	}
+
+	function showError(message)
+	{
+		showMessage(message, "error");
+	}
 });
