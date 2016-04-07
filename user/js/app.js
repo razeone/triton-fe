@@ -15,9 +15,11 @@ var navigation =
 	profiles: "templates/profiles.html",
 	add_profile: "templates/add_profile.html",
 	billing: "templates/billing.html",
-    forgot: "templates/forgot.html",
-    reset: "templates/reset.html"
+	forgot: "templates/forgot.html",
+	reset: "templates/reset.html"
 };
+
+var testNavigation = false;
 
 app.config(function($routeProvider, $authProvider)
 {
@@ -26,12 +28,42 @@ app.config(function($routeProvider, $authProvider)
 	$authProvider.signupUrl = accessEndpoints.signup;
 	$authProvider.authToken = 'JWT';
 
+	var skipIfLoggedIn = function($q, $location, $auth)
+	{
+      var deferred = $q.defer();
+      if($auth.isAuthenticated())
+		{
+			deferred.reject();
+      }
+		else
+		{
+			deferred.resolve();
+      }
+      return deferred.promise;
+	};
+
+	var loginRequired = function($q, $location, $auth)
+	{
+      var deferred = $q.defer();
+      if($auth.isAuthenticated())
+		{
+        deferred.resolve();
+      }
+		else
+		{
+        $location.path("/login");
+      }
+      return deferred.promise;
+	};
+
+	if(testNavigation) loginRequired = skipIfLoggedIn;
+
 	$routeProvider
 	.when("/",
 	{
 		templateUrl: navigation.index,
 		controller: "IndexController",
-		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
+		resolve: { loginRequired: loginRequired } //
 	})
 	.when("/login",
 	{
@@ -49,27 +81,27 @@ app.config(function($routeProvider, $authProvider)
 	{
 		templateUrl: navigation.profiles,
 		controller: "IndexController",
-		resolve: { loginRequired: skipIfLoggedIn } //loginRequired
+		resolve: { loginRequired: loginRequired } //
 	})
 	.when("/add_profiles",
 	{
 		templateUrl: navigation.add_profile,
 		controller: "IndexController",
-		resolve: { loginRequired: skipIfLoggedIn }//loginRequired
+		resolve: { loginRequired: loginRequired } //
 	})
 	.when("/billing",
 	{
 		templateUrl: navigation.billing,
 		controller: "IndexController",
-		resolve: { skipIfLoggedIn: skipIfLoggedIn }//loginRequired
+		resolve: { loginRequired: loginRequired } //
 	})
-    .when("/forgot",
+	.when("/forgot",
 	{
 		templateUrl: navigation.forgot,
 		controller: "IndexController",
 		resolve: { skipIfLoggedIn: skipIfLoggedIn }
 	})
-    .when("/reset",
+	.when("/reset",
 	{
 		templateUrl: navigation.reset,
 		controller: "IndexController",
@@ -79,32 +111,4 @@ app.config(function($routeProvider, $authProvider)
 	({
 		redirectTo: "/"
 	});
-
-	function skipIfLoggedIn($q, $location, $auth)
-	{
-      var deferred = $q.defer();
-      if($auth.isAuthenticated())
-		{
-			deferred.reject();
-      }
-		else
-		{
-			deferred.resolve();
-      }
-      return deferred.promise;
-    }
-
-	function loginRequired($q, $location, $auth)
-	{
-      var deferred = $q.defer();
-      if($auth.isAuthenticated())
-		{
-        deferred.resolve();
-      }
-		else
-		{
-        $location.path("/login");
-      }
-      return deferred.promise;
-    }
 });
