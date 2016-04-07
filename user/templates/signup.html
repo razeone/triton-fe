@@ -1,5 +1,5 @@
 <!-- log in-->
-<div class="row" ng-controller="AccessController">
+<div class="row no-margin" ng-controller="AccessController">
     <div class="col-sm-5 col-sm-offset-3 well">
         <h2 class="page-header text-center">Registro</h2><br>
         <div class="row">
@@ -22,15 +22,15 @@
                             Estoy de acuerdo</label>
                         </div>
                     </div>
-                            <p>Al hacer clic en <span class="label bold label-primary">Registrar</span>,
+                            <p>Al hacer clic en <span class="label bold label-primary">Registrarse</span>,
                             usted acepta los <a href="" data-toggle="modal" ng-click="toggleModal()">
                             Términos y Condiciones</a> establecidos por este sitio.</p>
                     <hr class="colorgraph">
                     <div class="row">
-                        <div class="col-xs-6 col-md-6">
+                        <div class="col-md-6 text-center">
                             <input type="button" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="!register"  ng-click="signup()">
                         </div>
-                        <div class="col-xs-6 col-md-6">
+                        <div class="col-md-6 text-center">
                             <input type="button" class="btn btn-danger btn-lg btn-raised" ng-click="go(login)" value="Cancelar">
                         </div>
                     </div>

@@ -1,13 +1,11 @@
-<div class="container" style="padding-top:10px;" ng-controller="addProfController">
+<div class="row no-margin" ng-controller="addProfController">
 
     <div ng-include="'templates/menu.html'"></div>
-
-    <div class="row">
         <div class="col-sm-8 col-sm-offset-2 personal-info well">
             <h1 class="text-center page-header">Nuevo Perfil</h1>
             <form class="" role="form">
                     <!-- Tipo de perfil radio-->
-                <div class="row form-group">
+                <div class="row form-group" name="addProfForm">
                     <label class="col-md-3 control-label">Tipo de Perfil</label>
                     <div class="col-md-8">
                       <div class="radio radio-primary">
@@ -100,12 +98,15 @@
                     </div>
                 </div>
                 <hr class="colorgraph">
-                <div class="row" align="center">
-                    <a class="btn btn-lg btn-primary btn-raised" id="AddProfile" ng-click="">Crear perfil</a>
-                    <a class="btn btn-lg btn-danger btn-raised" id="Cancelar" ng-click="">Cancelar</a>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-lg btn-primary btn-raised" id="AddProfile" ng-click="">Crear perfil</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a class="btn btn-lg btn-danger btn-raised" id="Cancelar" ng-click="">Cancelar</a>
+                    </div>
                 </div>
             </form>
             <br>
         </div>
-    </div>
 </div>
