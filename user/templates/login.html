@@ -1,29 +1,29 @@
-<div class="container" ng-controller="AccessController">
-	<div class="col-sm-4 col-sm-offset-4">
-		<h1 div class="text-center">Ingresar</h1>
-
-                <form class="center-block form-horizontal">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="email" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="password" autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <div class="checkbox">
-                            <label for="rememberme">
-                            <input type="checkbox" id="rememberme" name="rememberme" value="rememberme">
-                            <span class="checkbox-material"><span class="check"></span></span>
-                            Recuérdame</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <a class="btn btn-block btn-success btn-raised" id="loginButton" ng-click="login()">Ingresar</a>
-                        <a class="btn btn-block btn-primary btn-raised" id="registerButton" href="#signup" >Regístrate</a>
-                    </div>
-                </form>
-                <div class="col-md-12 text-center">
-                    <a href="#">¿Olvidaste tu contraseña?</a>
+<div class="row" ng-controller="AccessController">
+	<div class="col-sm-4 col-sm-offset-4 well">
+		<h1 class="text-center page-header">Ingresar</h1>
+        <form class="center-block form-horizontal">
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="email" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control input-lg" placeholder="Contraseña" name="password" id="password" ng-model="password" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label for="rememberme">
+                    <input type="checkbox" id="rememberme" name="rememberme" value="rememberme">
+                    <span class="checkbox-material"><span class="check"></span></span>
+                    Recuérdame</label>
                 </div>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-block btn-success btn-raised" id="loginButton" ng-click="login()">Ingresar</a>
+                <a class="btn btn-block btn-primary btn-raised" id="registerButton" href="#signup" >Regístrate</a>
+            </div>
+        </form>
+        <hr class="colorgraph">
+        <div class="col-md-12 text-center">
+            <a ng-href="#/forgot">¿Olvidaste tu contraseña?</a>
+        </div>
 	</div>
 </div>

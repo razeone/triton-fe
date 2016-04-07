@@ -14,7 +14,9 @@ var navigation =
 	index: "templates/index.html",
 	profiles: "templates/profiles.html",
 	add_profile: "templates/add_profile.html",
-	billing: "templates/billing.html"
+	billing: "templates/billing.html",
+    forgot: "templates/forgot.html",
+    reset: "templates/reset.html"
 };
 
 app.config(function($routeProvider, $authProvider)
@@ -60,6 +62,18 @@ app.config(function($routeProvider, $authProvider)
 		templateUrl: navigation.billing,
 		controller: "IndexController",
 		resolve: { skipIfLoggedIn: skipIfLoggedIn }//loginRequired
+	})
+    .when("/forgot",
+	{
+		templateUrl: navigation.forgot,
+		controller: "IndexController",
+		resolve: { skipIfLoggedIn: skipIfLoggedIn }
+	})
+    .when("/reset",
+	{
+		templateUrl: navigation.reset,
+		controller: "IndexController",
+		resolve: { skipIfLoggedIn: skipIfLoggedIn }
 	})
 	.otherwise
 	({
