@@ -14,5 +14,6 @@ var access_controller = require('./controller-access.js');
 var index_controller = require('./controller-index.js');
 var menu_controller = require('./controller-menu.js');
 var add_profile = require('./controller-addprofile.js');
+var profile = require('./controller-profile.js');
 var forgot = require('./controller-forgot.js');
 var reset = require('./controller-reset.js');
