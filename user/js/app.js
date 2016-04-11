@@ -19,7 +19,7 @@ var navigation =
 	reset: "templates/reset.html"
 };
 
-var testNavigation = false;
+var testNavigation = true;
 
 app.config(function($routeProvider, $authProvider)
 {

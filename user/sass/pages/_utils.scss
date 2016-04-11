@@ -1,5 +1,23 @@
-.well {
-    background: #fff !important;
+header{
+    position: absolute;
+    z-index: -3;
+    width: 100%;
+    .panel-primary{
+        .panel-heading{
+            height: 300px;
+            background-image: url("//eduardodulce.es/wp-content/uploads/2015/12/Android-L-Material-Design-Wallpapers-5.png");
+            background-size: cover;
+            background-blend-mode: color-burn;
+        }
+    }
+}
+
+.navbar{
+    background: transparent !important;
+}
+
+.top-cont{
+    padding-top: 80px;
 }
 
 .form-horizontal .form-group {
@@ -12,4 +30,8 @@
 
 .no-margin{
     margin: 0;
+}
+
+.btn{
+    min-width: 180px;
 }
