@@ -12,6 +12,11 @@ header{
     }
 }
 
+.navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:focus, .navbar .navbar-nav>.active>a:hover{
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+
 .navbar{
     background: transparent !important;
 }
