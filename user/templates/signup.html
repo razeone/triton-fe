@@ -7,6 +7,7 @@
                 <form>
                     <div class="form-group">
                         <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo Electronico" tabindex="5" ng-model="email">
+                        <toaster-container></toaster-container>
                     </div>
                     <div class="form-group">
                         <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" tabindex="6" ng-model="password">
@@ -26,14 +27,14 @@
                             usted acepta los <a href="" data-toggle="modal" ng-click="toggleModal()">
                             Términos y Condiciones</a> establecidos por este sitio.</p>
                     <hr class="colorgraph">
-                    <div class="row">
+                    <form ng-submit="signup()" class="row">
                         <div class="col-md-6 text-center">
-                            <input type="button" class="btn btn-danger btn-lg" ng-click="go(login)" value="Cancelar">
+                            <a type="button" class="btn btn-danger btn-lg" ng-click="go(login)">Cancelar</a>
                         </div>
                         <div class="col-md-6 text-center">
-                            <input type="button" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="!register"  ng-click="signup()">
+                            <input type="submit" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="!register"  ng-click="signup()">
                         </div>
-                    </div>
+                    </form>
                 </form>
             </div>
             <!--Terminos & condiciones-->

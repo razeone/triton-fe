@@ -1,4 +1,4 @@
-var app = angular.module("App", ["ngRoute", "toaster", "satellizer"]);
+var app = angular.module("App", ["ngRoute", "toaster", "satellizer", "ngAnimate"]);
 
 var accessAPI = 'http://localhost:8085/v1';
 var accessEndpoints =
@@ -19,7 +19,7 @@ var navigation =
 	reset: "templates/reset.html"
 };
 
-var testNavigation = false;
+var testNavigation = true;
 
 app.config(function($routeProvider, $authProvider)
 {
