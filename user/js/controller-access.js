@@ -56,11 +56,6 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		});
 	};
 
-   $scope.go = function(url)
-	{
-      $location.path(url);
-	};
-
 	$scope.toggleModal = function()
 	{
 		$('#t_and_c_m').modal();

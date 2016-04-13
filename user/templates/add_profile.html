@@ -3,7 +3,7 @@
     <div ng-include="'templates/menu.html'"></div>
         <div class="col-md-8 col-md-offset-2 personal-info well">
             <h1 class="text-center page-header">Nuevo Perfil</h1>
-            <form class="" role="form">
+            <form role="form" ng-submit="">
                     <!-- Tipo de perfil radio-->
                 <div class="row form-group" name="addProfForm">
                     <label class="col-md-3 control-label">Tipo de Perfil</label>
@@ -22,27 +22,6 @@
                       </div>
                     </div>
                 </div>
-                <!-- <input type="radio" name="GrupoOpciones1" value="Si" id="GrupoOpciones1_0" onClick="
-                document.getElementById('nombre').disabled=false;
-                document.getElementById('Nacionalidad').disabled=false;
-                document.getElementById('edo_civil').disabled=false;
-                document.getElementById('razon_social').disabled=true;
-                document.getElementById('RFC').disabled=false;
-                document.getElementById('Domicilio').disabled=false;
-                document.getElementById('Patrimonio').disabled=false;
-                document.getElementById('Giro').disabled=true;
-                "/> Persona Fisica
-
-                <input type="radio" name="GrupoOpciones1" value="No" id="GrupoOpciones1_1" onClick="
-                document.getElementById('nombre').disabled=true;
-                document.getElementById('Nacionalidad').disabled=false;
-                document.getElementById('edo_civil').disabled=true;
-                document.getElementById('razon_social').disabled=false;
-                document.getElementById('Domicilio').disabled=false;
-                document.getElementById('Giro').disabled=false;
-                document.getElementById('Patrimonio').disabled=false;
-                document.getElementById('Patrimonio').disabled=true;"/> Persona moral -->
-                <!-- end radio-->
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-9">
