@@ -25,7 +25,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		},
 		function(response)
 		{
-			showError(response.data.error);
+			showError(response.data ? response.data.error : "service not available");
 		});
 	};
 
@@ -52,7 +52,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		},
 		function(response)
 		{
-			showError(response.data.error);
+			showError(response.data ? response.data.error : "service not available");
 		});
 	};
 
