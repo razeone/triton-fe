@@ -4,6 +4,12 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 {
 	$scope.login = function()
 	{
+        if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
+        {
+            showError("mail and password required");
+            return;
+        }
+
 		$scope.credentials =
 		{
 			email: $scope.email,
@@ -31,6 +37,12 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 
 	$scope.signup = function()
 	{
+        if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
+        {
+            showError("mail and password required");
+            return;
+        }
+
 		$scope.credentials =
 		{
 			email: $scope.email,
@@ -47,7 +59,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 				return;
 			}
 
-			showMessage("check your inbox");
+			showMessage("check your mail inbox");
 			$location.path("/");
 		},
 		function(response)
@@ -78,3 +90,4 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		showMessage(message, "error");
 	}
 });
+
