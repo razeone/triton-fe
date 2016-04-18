@@ -3,20 +3,20 @@
     <div ng-include="'templates/menu.html'"></div>
         <div class="col-md-8 col-md-offset-2 personal-info well">
             <h1 class="text-center page-header">Nuevo Perfil</h1>
-            <form role="form" ng-submit="">
+            <form role="form" ng-submit="submit()" name="addForm">
                     <!-- Tipo de perfil radio-->
                 <div class="row form-group" name="addProfForm">
                     <label class="col-md-3 control-label">Tipo de Perfil</label>
                     <div class="col-md-8">
                       <div class="radio radio-primary">
                         <label>
-                          <input type="radio" name="person" id="fisica" value="fisica" ng-model="radioPerson"><span class="circle"></span><span class="check"></span>
+                          <input type="radio" name="person" id="fisica" value="fisica" ng-model="formData.radioPerson"><span class="circle"></span><span class="check"></span>
                           Persona Fisica
                         </label>
                       </div>
                       <div class="radio radio-primary">
                         <label>
-                          <input type="radio" name="person" id="moral" value="moral" ng-model="radioPerson" ><span class="circle"></span><span class="check"></span>
+                          <input type="radio" name="person" id="moral" value="moral" ng-model="formData.radioPerson"><span class="circle"></span><span class="check"></span>
                              Persona moral
                         </label>
                       </div>
@@ -25,19 +25,19 @@
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Nombre:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" name="nombre" id="nombre" value="" placeholder="Nombre completo" ng-disabled="radioPerson != 'fisica'" />
+                        <input class="form-control" ng-model="formData.name" type="text" name="nombre" id="nombre" value="" placeholder="Nombre completo" ng-disabled="formData.radioPerson != 'fisica'" ng-required="formData.radioPerson == 'fisica'"/>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Nacionalidad:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="Nacionalidad" id="Nacionalidad" value="" type="text" placeholder="Nacionalidad" />
+                        <input class="form-control" ng-model="formData.nation" name="Nacionalidad" id="Nacionalidad" value="" type="text" placeholder="Nacionalidad" required/>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Estado Civil:</label>
                     <div class="col-lg-9">
-                        <select class="form-control" name="edo_civil" id="edo_civil" ng-disabled="radioPerson != 'fisica'">
+                        <select class="form-control" ng-model="formData.civil" name="edo_civil" id="edo_civil" ng-disabled="formData.radioPerson != 'fisica'" ng-required="formData.radioPerson == 'fisica'">
                             <option selected>Estado Civil </option>
                             <option value="Soltero/a">Soltero/a</option>
                             <option value="Casado/a">Casado/a</option>
@@ -49,31 +49,32 @@
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Razón Social:</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control"  name="razon_social" id="razon_social" value="" placeholder="Razón Social"  ng-disabled="radioPerson != 'moral'" />
+                        <input type="text" class="form-control" ng-model="formData.reason" name="razon_social" id="razon_social" value="" placeholder="Razón Social"  ng-disabled="formData.radioPerson != 'moral'" ng-required="formData.radioPerson == 'moral'"/>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">RFC:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="RFC" id="RFC" value="" type="text" placeholder="RFC" />
+                        <input class="form-control" name="rfc" id="RFC" ng-model="formData.rfc" value="" type="text" placeholder="RFC" ng-pattern="/^([A-Z|a-z|&amp;]{3})(([0-9]{2})([0][13456789]|[1][012])([0][1-9]|[12][\d]|[3][0])|([0-9]{2})([0][13578]|[1][02])([0][1-9]|[12][\d]|[3][01])|([02468][048]|[13579][26])([0][2])([0][1-9]|[12][\d])|([1-9]{2})([0][2])([0][1-9]|[12][0-8]))(\w{2}[A|a|0-9]{1})$|^([A-Z|a-z]{4})(([0-9]{2})([0][13456789]|[1][012])([0][1-9]|[12][\d]|[3][0])|([0-9]{2})([0][13578]|[1][02])([0][1-9]|[12][\d]|[3][01])|([02468][048]|[13579][26])([0][2])([0][1-9]|[12][\d])|([1-9]{2})([0][2])([0][1-9]|[12][0-8]))((\w{2})([A|a|0-9]{1})){0,3}$/" required/>
+                        <span ng-show="addForm.rfc.$error.pattern">El formato de RFC es incorrecto</span>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Domicilio:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="Domicilio" id="Domicilio" value="" type="text" placeholder="Domicilio"/>
+                        <input class="form-control" name="Domicilio" ng-model="formData.address" id="Domicilio" value="" type="text" placeholder="Domicilio" required/>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Patrimonio:</label>
                     <div class="col-lg-9">
-                        <input class="form-control" name="Patrimonio" value="" id="Patrimonio" type="text" placeholder="Patrimonio" ng-disabled="radioPerson != 'fisica'"/>
+                        <input class="form-control" name="Patrimonio" ng-model="formData.patrimony" value="" id="Patrimonio" type="text" placeholder="Patrimonio" ng-disabled="formData.radioPerson != 'fisica'" ng-required="formData.radioPerson == 'fisica'"/>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-lg-3 control-label">Giro:</label>
                     <div class="col-lg-9">
-                        <input type="text" name="Giro" id="Giro" class="form-control" value="" placeholder="Giro" ng-disabled="radioPerson != 'moral'"/>
+                        <input type="text" name="Giro" id="Giro" class="form-control" ng-model="formData.order" value="" placeholder="Giro" ng-disabled="formData.radioPerson != 'moral'" ng-required="formData.radioPerson == 'moral'"/>
                     </div>
                 </div>
                 <hr class="colorgraph">
@@ -82,7 +83,7 @@
                         <a class="btn btn-lg btn-danger" id="Cancelar" ng-click="">Cancelar</a>
                     </div>
                     <div class="col-sm-6 text-center">
-                        <input type="submit" class="btn btn-lg btn-primary btn-raised" id="AddProfile" ng-click="" value="Crear perfil">
+                        <input type="submit" class="btn btn-lg btn-primary btn-raised" id="AddProfile" ng-disabled="addForm.$invalid" value="Crear perfil">
                     </div>
                 </div>
             </form>
