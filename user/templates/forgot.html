@@ -5,7 +5,7 @@
         <form class="center-block form-horizontal" name="forgot_pass" ng-submit="rescue()">
             <div class="form-group">
                 <input type="email" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="email" autocomplete="off" required>
-                <span ng-show="forgot_pass.email.$error.email">Escribe un correo válido</span>
+                <span ng-show="forgot_pass.email.$error.email" class="text-danger">Escribe un correo válido</span>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
