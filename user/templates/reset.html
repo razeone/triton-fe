@@ -2,15 +2,18 @@
     <div class="col-md-6 col-md-offset-3 well">
         <h1 class="text-center page-header">Restablecer contraseña</h1>
         <p>Por favor, escribe tu nueva contraseña y confírmala.</p>
-        <form class="center-block form-horizontal" name="reset_pass">
+        <form class="center-block form-horizontal" name="reset_pass" ng-submit="reset()">
             <div class="form-group">
                 <input type="password" class="form-control input-lg" placeholder="Nueva contraseña" name="newPass" id="newPass" ng-model="newPass" autocomplete="off" required ng-minlength="8">
                 <span ng-show="reset_pass.newPass.$error.minlength" class="text-danger">La contraseña debe contener al menos 8 caracteres</span>
                 <input type="password" class="form-control input-lg" placeholder="Confirmacion de nueva contraseña" name="confirmNewPass" id="confirmNewPass" ng-model="confirmNewPass" autocomplete="off" required ng-minlength="8">
                 <span ng-show="newPass != confirmNewPass" class="text-danger">Las contraseñas no son iguales</span>
             </div>
-            <div class="form-group">
-                <button class="btn btn-lg pull-right btn-success btn-raised" id="loginButton" ng-disabled="reset_pass.$invalid || newPass != confirmNewPass" ng-click="forgot()">Restablecer contraseña</button>
+            <div class="col-md-6 text-center">
+                    <input type="submit" value="Restablecer contraseña" class="btn btn-lg btn-success btn-raised" ng-disabled="reset_pass.$invalid || newPass != confirmNewPass">
+                </div>
+            <!--div class="form-group">
+                <button class="btn btn-lg pull-right btn-success btn-raised" id="loginButton" ng-disabled="reset_pass.$invalid || newPass != confirmNewPass" ng-click="forgot()">Restablecer contraseña</button-->
             </div>
         </form>
     </div>

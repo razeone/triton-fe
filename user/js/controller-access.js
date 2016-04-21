@@ -59,8 +59,8 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 				return;
 			}
 
-			showMessage("check your mail inbox");
 			$location.path("/");
+			showSuccess("check your mail inbox");
 		},
 		function(response)
 		{
@@ -75,14 +75,18 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 
 	function showMessage(message, type)
 	{
-		var showtype = type ? type : "alert";
 		toaster.pop
 		({
-			type: showtype,
 			body: message,
+			type: type,
 			showCloseButton: true,
 			timeout: 3000
 		});
+	}
+
+	function showSuccess(message)
+	{
+		showMessage(message, "alert");
 	}
 
 	function showError(message)
@@ -90,4 +94,3 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		showMessage(message, "error");
 	}
 });
-
