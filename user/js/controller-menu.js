@@ -2,7 +2,7 @@ var app = angular.module("App");
 
 app.controller("MenuController", function($scope, $location, $auth, $http)
 {
-	var accessAPI = 'http://localhost:8085/v1';
+	var accessAPI = 'http://microservicios.org/v1';
 	var accessEndpoints =
 	{
 		logout: "/auth/logout"
