@@ -16,10 +16,11 @@ var navigation =
 	add_profile: "templates/add_profile.html",
 	billing: "templates/billing.html",
 	forgot: "templates/forgot.html",
-	reset: "templates/reset.html"
+	reset: "templates/reset.html",
+	home: "templates/home.html"
 };
 
-var testNavigation = false;
+var testNavigation = true;
 
 app.config(function($routeProvider, $authProvider)
 {
@@ -98,6 +99,12 @@ app.config(function($routeProvider, $authProvider)
 	.when("/forgot",
 	{
 		templateUrl: navigation.forgot,
+		controller: "IndexController",
+		resolve: { skipIfLoggedIn: skipIfLoggedIn }
+	})
+    .when("/home",
+	{
+		templateUrl: navigation.home,
 		controller: "IndexController",
 		resolve: { skipIfLoggedIn: skipIfLoggedIn }
 	})
