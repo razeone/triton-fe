@@ -30,9 +30,6 @@
 
 .plans-home{
     padding: 60px 0;
-    .well{
-        padding: 0 15px;
-    }
 }
 
 section{
@@ -67,4 +64,41 @@ section{
             margin-left: 16px;
         }
     }
+}
+
+.enter{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: transform 0.25s, opacity 0.5s;
+}
+
+.enter2{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.enter3{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: transform 1s, opacity 1.5s;
+}
+
+.enterOut{
+    transform: translateY(200px);
+    opacity: 0;
+    transition: transform 0.25s, opacity 0.5s;
+}
+
+
+.leftAn{
+    opacity: 1;
+    transform: translateX(0px);
+    transition: transform 2s, opacity 1s;
+}
+
+.An{
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: transform 2s, opacity 1s;
 }

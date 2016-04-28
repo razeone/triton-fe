@@ -1,4 +1,5 @@
-<header class="header-home">
+<div scroll>
+<header class="header-home" >
     <div class="menu-home"></div>
 </header>
 <section class="row top-home no-margin animloadHead">
@@ -9,14 +10,14 @@
 
             </form>
             <h1 class="bold">TRITON PROJECT</h1>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi blanditiis iste beatae optio sapiente pariatur, minima quidem, minus molestias magni omnis, labore! Culpa sequi adipisci repellat nostrum maxime repellendus neque.</h3>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi blanditiis iste beatae optio sapiente pariatur.</h3>
         </div>
     </div>
 </section>
-<section class="row plans-home no-margin">
+<section class="row plans-home no-margin" >
     <div class="container">
         <h2 class="text-center">PLANES</h2>
-        <div class="col-md-4">
+        <div class="col-md-4 enterOut" ng-class="{enter : change, enterOut: !change}">
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="text-center">PLAN 1</h3>
@@ -31,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 enterOut" ng-class="{enter2 : change, enterOut: !change}">
            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="text-center">PLAN 2</h3>
@@ -46,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 enterOut" ng-class="{enter3 : change, enterOut: !change}">
            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="text-center">PLAN 3</h3>
@@ -62,10 +63,11 @@
             </div>
         </div>
     </div>
+    <h4 class="text-center"><a href="" class="btn btn-raised btn-primary">Ver más planes</a></h4>
 </section>
 <section class="row no-margin register-home">
     <div class="container">
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-center An" ng-class="{leftAn : changeRegister, An : !changeRegister}">
             <h2 class="text-center">¡REGÍSTRATE AHORA!</h2>
             <a href="#signup" class="btn btn-success btn-raised btn-lg">Registrarme</a>
         </div>
@@ -76,36 +78,34 @@
         <h2 class="text-center">NUESTRO EQUIPO</h2>
         <div class="col-md-4">
            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <img src="images/ladygodinez.jpeg" alt="" width="100%">
+                <div class="panel-heading" style="background:url(images/ladygodinez.jpeg); background-size:cover;">
                     <h2>Lady Godínez</h2>
                 </div>
                 <div class="panel-body">
-                Panel content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a, voluptas qui eum corrupti laborum adipisci voluptates voluptatem nemo, nostrum amet molestiae minima minus cupiditate porro assumenda nihil quos quam!
                 </div>
             </div>
         </div>
         <div class="col-md-4">
            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <img src="images/k-bigpic.jpg" alt="" width="100%">
+                <div class="panel-heading" style="background:url(images/k-bigpic.jpg); background-size:cover;">
                     <h2>Señorito Hipster</h2>
                 </div>
                 <div class="panel-body">
-                Panel content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi unde fugiat ea ratione natus, corrupti eaque quaerat velit voluptate in, repellat quos sapiente, eos laborum officiis dolorum commodi odit similique?
                 </div>
             </div>
         </div>
         <div class="col-md-4">
            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <img src="images/gonidez.jpeg" alt="" height="100%">
+                <div class="panel-heading" style="background:url(images/gonidez.jpeg); background-size:cover;">
                     <h2>Lord Godínez</h2>
                 </div>
                 <div class="panel-body">
-                Panel content
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium odit assumenda cum, esse obcaecati atque, at mollitia rerum asperiores ducimus! Accusantium at, labore magni, qui pariatur explicabo saepe eius ab.
                 </div>
             </div>
         </div>
    </div>
 </section>
+</div>

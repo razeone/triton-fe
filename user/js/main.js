@@ -18,3 +18,4 @@ var add_profile = require('./controller-addprofile.js');
 var profile = require('./controller-profile.js');
 var forgot = require('./controller-forgot.js');
 var reset = require('./controller-reset.js');
+var scrollChange = require('./directive-scroll.js');
