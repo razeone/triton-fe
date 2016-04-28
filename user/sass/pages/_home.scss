@@ -26,6 +26,24 @@
             font-size: 4em;
         }
     }
+
+    .white-form{
+        margin: auto;
+        h4{
+            color: white;
+        }
+        input{
+            padding: 7px;
+            width: 60%;
+            display: inline;
+            min-width: 260px;
+        }
+        button{
+            width: 30%;
+            display: inline;
+            min-width: 260px;
+        }
+    }
 }
 
 .plans-home{
@@ -66,6 +84,14 @@ section{
     }
 }
 
+.contact-home{
+    background: url("../../images/office.jpg");
+    background-color: lightseagreen;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    height: 600px;
+}
+
 .enter{
     transform: translateY(0px);
     opacity: 1;
@@ -101,4 +127,28 @@ section{
     transform: translateX(-200px);
     opacity: 0;
     transition: transform 2s, opacity 1s;
+}
+
+.rightEnter{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 0.25s, opacity 0.5s;
+}
+
+.rightEnter2{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.rightEnter3{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 1s, opacity 1.5s;
+}
+
+.rightEnterOut{
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.25s, opacity 0.5s;
 }

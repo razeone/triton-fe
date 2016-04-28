@@ -11,6 +11,11 @@ var app = angular.module("App").directive("scroll", function ($window) {
              } else {
                  $scope.changeRegister = false;
              }
+            if(this.pageYOffset >= 1200){
+                $scope.peopleIn = true;
+            }else{
+                $scope.peopleIn = false;
+            }
             $scope.$apply();
         });
     };
