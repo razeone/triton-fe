@@ -301,6 +301,10 @@ header{
 .corner-to-corner {
     position: absolute;
 }
+.fixed{
+    position: fixed;
+}
+
 .lt {
     left: 0;
 }
@@ -334,6 +338,11 @@ header{
 .block {
     display: block;
 }
+
+.inline{
+    display: inline-block;
+}
+
 .open .hover-inactive,
 .hover-inactive {
     &:hover,

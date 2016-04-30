@@ -1,3 +1,12 @@
+.menu-home{
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    &.init{
+        background: rgba(255,255,255,0.5);
+    }
+}
+
 .top-home{
     background: url("../../images/back2.jpg");
     background-size: cover;
@@ -50,12 +59,8 @@
     padding: 60px 0;
 }
 
-section{
-    .container{
-        h2{
-            margin-bottom: 30px;
-        }
-    }
+.footer-home{
+    background: white;
 }
 
 .register-home{

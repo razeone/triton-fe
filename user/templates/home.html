@@ -1,7 +1,14 @@
 <div scroll>
-<header class="header-home" >
-    <div class="menu-home"></div>
-</header>
+<section class="menu-home init fixed tp p15">
+    <ul class="no-padding no-margin">
+        <li class="inline">
+            <a href="">Sign in</a>
+        </li>
+        <li class="inline">
+            <a href="">Log in</a>
+        </li>
+    </ul>
+</section>
 <section class="row top-home no-margin animloadHead">
     <div class="container">
         <div class="col-lg-12 text-center mb30">
@@ -24,7 +31,7 @@
 </section>
 <section class="row plans-home no-margin" >
     <div class="container">
-        <h2 class="text-center">PLANES</h2>
+        <h2 class="text-center pb30">PLANES</h2>
         <div class="col-md-4 enterOut" ng-class="{enter : change, enterOut: !change}">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -76,14 +83,14 @@
 <section class="row no-margin register-home">
     <div class="container">
         <div class="col-lg-12 text-center An" ng-class="{leftAn : changeRegister, An : !changeRegister}">
-            <h2 class="text-center">¡REGÍSTRATE AHORA!</h2>
+            <h2 class="text-center pb30">¡REGÍSTRATE AHORA!</h2>
             <a href="#signup" class="btn btn-success btn-raised btn-lg">Registrarme</a>
         </div>
     </div>
 </section>
 <section class="row no-margin about-home">
    <div class="container">
-        <h2 class="text-center">NUESTRO EQUIPO</h2>
+        <h2 class="text-center pb30">NUESTRO EQUIPO</h2>
         <div class="col-md-4 rightEnterOut" ng-class="{rightEnter : peopleIn , rightEnterOut : !peopleIn}">
            <div class="panel panel-default">
                 <div class="panel-heading" style="background:url(images/ladygodinez.jpeg); background-size:cover;">
@@ -116,6 +123,24 @@
         </div>
    </div>
 </section>
+<section class="fixed w100 bt footer-home">
+    <div class="container-flex text-primary pt10 pl15 pr15">
+        <p class="icon-home pull-left"><i class="material-icons text-primary">usb</i>
+        <ul class="pull-right text-right no-padding">
+            <li class="inline">
+                <a href=""><i class="fa fa-facebook fa-2x mr10"></i></a>
+            </li>
+            <li class="inline">
+                <a href=""><i class="fa fa-twitter fa-2x mr10"></i></a>
+            </li>
+            <li class="inline">
+                <a href=""><i class="fa fa-envelope fa-2x"></i></a>
+            </li>
+        </ul>
+        </p>
+    </div>
+</section>
+</div>
 <!--<section class="contact-home pt30">
     <div class="container">
         <div class="col-md-4">
@@ -129,4 +154,3 @@
         </div>
     </div>
 </section>-->
-</div>
