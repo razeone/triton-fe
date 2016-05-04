@@ -1,6 +1,39 @@
 <div scroll>
-<section class="menu-home init fixed tp p15">
-    <ul class="no-padding no-margin">
+<a class="burger absolute rt hidden-sm hidden-md hidden-lg" ng-class="{burger2 : change}">
+    <i class="fa fa-bars" ng-click="burger = !burger"></i>
+</a>
+<section class="menu-mb-home menu-home absolute tp p15 init hidden-sm hidden-md hidden-lg" ng-show="burger">
+    <h3 class="no-margin">Triton Project</h3>
+    <ul class="no-padding no-margin bold">
+        <li class="inline mt10">
+            <a href="">Plataforma</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Servicios</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Documentación</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Sign in</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Log in</a>
+        </li>
+    </ul>
+</section>
+<section class="menu-home init fixed tp p15 hidden-xs" ng-class="{scrolling : change, init: !change}">
+    <h3 class="no-margin inline">Triton Project</h3>
+    <ul class="no-padding no-margin pull-right bold">
+        <li class="inline">
+            <a href="">Plataforma</a>
+        </li>
+        <li class="inline">
+            <a href="">Servicios</a>
+        </li>
+        <li class="inline">
+            <a href="">Documentación</a>
+        </li>
         <li class="inline">
             <a href="">Sign in</a>
         </li>
@@ -20,10 +53,10 @@
                 <form action="">
                     <div class="white-form">
                         <input type="text" id="addon2" class="" placeholder="ej. www.tudominio.com">
-                        <a href="" class="btn btn-default btn-raised">
+                        <button type="submit" class="btn btn-default btn-raised">
                             <i class="material-icons">search</i>
                             Buscar dominio gratis
-                        </a>
+                        </button>
                     </div>
                 </form>
             </div>
