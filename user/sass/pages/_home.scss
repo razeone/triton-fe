@@ -49,6 +49,7 @@
 .top-home{
     background: url("../../images/back2.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -105,6 +106,7 @@
 .register-home{
     background: url("../../images/back.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 300px;
     width: 100%;
     display: flex;

@@ -1,5 +1,5 @@
 <div scroll>
-<a class="burger absolute rt hidden-sm hidden-md hidden-lg" ng-class="{burger2 : change}">
+<a class="burger absolute rt hidden-sm hidden-md hidden-lg" ng-class="{burger2 : peopleIn}">
     <i class="fa fa-bars" ng-click="burger = !burger"></i>
 </a>
 <section class="menu-mb-home menu-home absolute tp p15 init hidden-sm hidden-md hidden-lg" ng-show="burger">
@@ -22,7 +22,7 @@
         </li>
     </ul>
 </section>
-<section class="menu-home init fixed tp p15 hidden-xs" ng-class="{scrolling : change, init: !change}">
+<section class="menu-home init fixed tp p15 hidden-xs" ng-class="{scrolling : peopleIn, init: !peopleIn}">
     <h3 class="no-margin inline">Triton Project</h3>
     <ul class="no-padding no-margin pull-right bold">
         <li class="inline">

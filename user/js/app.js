@@ -1,4 +1,4 @@
-var app = angular.module("App", ["ngRoute", "toaster", "satellizer", "ngAnimate"]);
+var app = angular.module("App", ["ngRoute", "toaster", "satellizer", "ngAnimate", "nvd3"]);
 
 var accessAPI = 'http://microservicios.org/v1';
 var accessEndpoints =

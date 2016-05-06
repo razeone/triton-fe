@@ -1,0 +1,45 @@
+.dashboard{
+    .row{
+        padding-top: 25px;
+        &:first-of-type{
+            padding: 0;
+        }
+    }
+    legend{
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 10px;
+        clear: both;
+        overflow: auto;
+        zoom:1;
+    }
+}
+
+.shortcuts{
+    a{
+        padding: 5px 0;
+        border-left: 1px solid #009688;
+        &:first-of-type{
+            border: 0;
+        }
+        &:hover{
+            background: #009688;
+            color: white;
+            transition: 0.25s;
+            text-decoration: none;
+        }
+    }
+}
+
+.graphs{
+    .raphael-group-12-background{
+        stroke: none !important;
+    }
+}
+
+@media (max-width: 750px){
+    .shortcuts{
+        a{
+            border: 0 !important;
+        }
+    }
+}
