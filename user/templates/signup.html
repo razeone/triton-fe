@@ -8,6 +8,14 @@
                 <div class="col-md-12">
                     <form ng-submit="signup()" name="registerForm">
                         <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Nombre(s)" tabindex="5" ng-model="name" required>
+                            <span ng-show="registerForm.name.$error.required" class="text-danger">Por favor, escribe tu Nombre.</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Apellido(s)" tabindex="5" ng-model="lastname" required>
+                            <span ng-show="registerForm.lastname.$error.required" class="text-danger">Debes escribir al menos un Apellido.</span>
+                        </div>
+                        <div class="form-group">
                             <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo Electronico" tabindex="5" ng-model="email" required>
                         </div>
                         <div class="form-group">

@@ -21,7 +21,7 @@ var navigation =
 	home: "templates/home.html"
 };
 
-var testNavigation = false;
+var testNavigation = true;
 
 app.config(function($routeProvider, $authProvider)
 {
