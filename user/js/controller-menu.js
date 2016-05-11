@@ -15,6 +15,11 @@ app.controller("MenuController", function($scope, $location, $auth, $http)
 		{
 			$auth.logout();
 			$location.path("/login");
+		}).
+		error(function()
+		{
+			$auth.logout();
+			$location.path("/login");
 		});
 	};
 

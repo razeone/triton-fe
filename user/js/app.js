@@ -1,6 +1,7 @@
 var app = angular.module("App", ["ngRoute", "toaster", "satellizer", "ngAnimate", "nvd3"]);
 
 var accessAPI = 'http://microservicios.org/v1';
+//var accessAPI = 'http://localhost:8085/v1';
 var accessEndpoints =
 {
 	login: "/auth/login",
@@ -20,10 +21,12 @@ var navigation =
 	home: "templates/home.html"
 };
 
-var testNavigation = true;
+var testNavigation = false;
 
 app.config(function($routeProvider, $authProvider)
 {
+	//$rootScope.api = "http://microservicios.org";
+
 	$authProvider.baseUrl = accessAPI;
 	$authProvider.loginUrl = accessEndpoints.login;
 	$authProvider.signupUrl = accessEndpoints.signup;

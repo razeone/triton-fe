@@ -14,7 +14,7 @@ app.controller("resetController", function($scope, $location, $auth, $routeParam
 	{
 		var password = $scope.newPass;
 
-		var data = 
+		var data =
 		{
 			token: token,
 			password: password
