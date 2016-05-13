@@ -2,9 +2,46 @@
    <div class="container top-cont">
     <div class="row no-margin" ng-controller="ProfileController">
         <div ng-include="'templates/menu.html'"></div>
-        <div class="col-md-8 col-md-offset-2 personal-info well">
-            <h1 class="page-header text-center">Editar Perfil</h1>
-            <form ng-submit="saveProfile()" name="profileForm">
+        <div class="col-md-12 personal-info well">
+            <h1 class="page-header">Editar Perfil</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <tabs>
+                            <pane title="Datos Personales">
+                                <form ng-submit="saveProfile()" name="profileForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label" for="name">Nombre(s):</label>
+                                                <input class="form-control" type="text" ng-model="formData.name" name="name" id="name" placeholder="" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label" for="lastname">Apellidos(s):</label>
+                                                <input class="form-control" type="text" ng-model="formData.name" name="lastname" id="lastname" placeholder="" required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label" >Calle:</label>
+                                                <input class="form-control" name="Domicilio" ng-model="formData.address" id="Domicilio" type="text" placeholder="" required/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </pane>
+                            <pane title="Facturación">
+                                <div>This is the content of the second tab.</div>
+                            </pane>
+                            <pane title="Configuraciones">
+                                <div>This is the content of the second tab.</div>
+                            </pane>
+                        </tabs>
+                    </div>
+                </div>
+
+
+
                         <!-- Tipo de perfil radio-->
                     <div class="row form-group">
                         <label class="col-md-3 control-label">Tipo de Perfil</label>
@@ -61,10 +98,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="col-lg-3 control-label" >Domicilio:</label>
-                        <div class="col-lg-9">
-                            <input class="form-control" name="Domicilio" ng-model="formData.address" id="Domicilio" type="text" placeholder="Domicilio" required/>
-                        </div>
+
                     </div>
                     <div class="row form-group">
                         <label class="col-lg-3 control-label">Patrimonio:</label>
@@ -87,7 +121,7 @@
                         <input type="submit" class="btn btn-lg btn-primary btn-raised" id="registration" ng-disabled="profileForm.$invalid" value="Guardar">
                     </div>
                 </div>
-            </form>
+
             </div>
     </div>
 </div>

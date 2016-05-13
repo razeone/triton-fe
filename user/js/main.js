@@ -1,13 +1,13 @@
 // main.js
-window.$ = window.jQuery = require('jquery');
-var bootstrap = require('bootstrap');
+window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');
+var bootstrap = require('../node_modules/bootstrap/dist/js/bootstrap.min.js');
 var bootstrap_material_design = require('bootstrap-material-design');
 var ripples = require ('../node_modules/bootstrap-material-design/dist/js/ripples.js');
-var angular = require('angular');
-var angular_route = require('angular-route');
-var animate = require ('angular-animate');
-var toaster = require('angularjs-toaster');
-var satellizer = require('satellizer');
+var angular = require('../node_modules/angular/angular.min.js');
+var angular_route = require('../node_modules/angular-route/angular-route.min.js');
+var animate = require ('../node_modules/angular-animate/angular-animate.min.js');
+var toaster = require('../node_modules/angularjs-toaster/toaster.min.js');
+var satellizer = require('../node_modules/satellizer/satellizer.min.js');
 $.material.init();
 //require('../css/main.css');
 var app = require('./app.js');
@@ -19,3 +19,4 @@ var profile = require('./controller-profile.js');
 var forgot = require('./controller-forgot.js');
 var reset = require('./controller-reset.js');
 var scrollChange = require('./directive-scroll.js');
+var tabs = require('./directive-tabs.js');
