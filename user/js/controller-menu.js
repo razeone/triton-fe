@@ -2,15 +2,11 @@ var app = angular.module("App");
 
 app.controller("MenuController", function($scope, $location, $auth, $http)
 {
-	var accessAPI = 'http://microservicios.org/v1';
-	var accessEndpoints =
-	{
-		logout: "/auth/logout"
-	};
+	var logoutService = $scope.accessAPI + $scope.endpoints.logout;
 
 	$scope.logout = function()
 	{
-		$http.post(accessAPI + accessEndpoints.logout,{}).
+		$http.post(logoutService, {}).
 		success(function()
 		{
 			$auth.logout();
@@ -23,8 +19,9 @@ app.controller("MenuController", function($scope, $location, $auth, $http)
 		});
 	};
 
-    $scope.navClass = function (page) {
-        var currentRoute = $location.path().substring(1) || 'index';
-        return page == currentRoute ? 'active' :'';
-    };
+	$scope.navClass = function(page)
+	{
+		var currentRoute = $location.path().substring(1) || 'index';
+		return page == currentRoute ? 'active' :'';
+	};
 });
