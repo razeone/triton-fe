@@ -2,12 +2,7 @@ var app = angular.module("App");
 
 app.controller("resetController", function($scope, $location, $auth, $routeParams, $http, toaster)
 {
-	var accessAPI = 'http://microservicios.org/v1';
-	var accessEndpoints =
-	{
-		recover: "/auth/recover"
-	};
-
+	var recoverService = $scope.accessAPI + $scope.endpoints.recover;
 	var token = $routeParams.token;
 
 	$scope.reset = function()
@@ -20,44 +15,23 @@ app.controller("resetController", function($scope, $location, $auth, $routeParam
 			password: password
 		};
 
-		$http.post(accessAPI + accessEndpoints.recover, data).
+		$http.post(recoverService, data).
 		then(function(response)
 		{
 			var data = response.data;
 
 			if(!data.success)
 			{
-				showError(data.error);
+				$scope.showError(data.error);
 				return;
 			}
 
 			$location.path("/");
-			showSuccess("password updated");
+			$scope.showSuccess("password updated");
 		},
 		function(response)
 		{
-			showError(response.data ? response.data.error : "service not available");
+			$scope.showError(response.data ? response.data.error : "service not available");
 		});
     };
-
-	function showMessage(message, type)
-	{
-		toaster.pop
-		({
-			body: message,
-			type: type,
-			showCloseButton: true,
-			timeout: 3000
-		});
-	}
-
-	function showSuccess(message)
-	{
-		showMessage(message, "alert");
-	}
-
-	function showError(message)
-	{
-		showMessage(message, "error");
-	}
 });

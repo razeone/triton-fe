@@ -4,11 +4,11 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 {
 	$scope.login = function()
 	{
-        if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
-        {
-            showError("mail and password required");
-            return;
-        }
+		if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
+		{
+			$scope.showError("mail and password required");
+			return;
+		}
 
 		$scope.credentials =
 		{
@@ -22,31 +22,33 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 
 			if(!data.success)
 			{
-				showError(data.error);
+				$scope.showError(data.error);
 				return;
 			}
 
-			showMessage("access granted");
+			$scope.showSuccess("access granted");
 			$location.path("/");
 		},
 		function(response)
 		{
-			showError(response.data ? response.data.error : "service not available");
+			$scope.showError(response.data ? response.data.error : "service not available");
 		});
 	};
 
 	$scope.signup = function()
 	{
-        if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
-        {
-            showError("mail and password required");
-            return;
-        }
+		if(typeof $scope.name == "undefined" || typeof $scope.lastname == "undefined" || typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
+		{
+			$scope.showError("name, lastname, mail and password required");
+			return;
+		}
 
 		$scope.credentials =
 		{
 			email: $scope.email,
-			password: $scope.password
+			password: $scope.password,
+			name: $scope.name,
+			lastname: $scope.lastname
 		};
 
 		$auth.signup($scope.credentials).then(function(response)
@@ -55,16 +57,16 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 
 			if(!data.success)
 			{
-				showError(data.error);
+				$scope.showError(data.error);
 				return;
 			}
 
 			$location.path("/");
-			showSuccess("check your mail inbox");
+			$scope.showSuccess("check your mail inbox");
 		},
 		function(response)
 		{
-			showError(response.data ? response.data.error : "service not available");
+			$scope.showError(response.data ? response.data.error : "service not available");
 		});
 	};
 
@@ -72,25 +74,4 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 	{
 		$('#t_and_c_m').modal();
 	};
-
-	function showMessage(message, type)
-	{
-		toaster.pop
-		({
-			body: message,
-			type: type,
-			showCloseButton: true,
-			timeout: 3000
-		});
-	}
-
-	function showSuccess(message)
-	{
-		showMessage(message, "alert");
-	}
-
-	function showError(message)
-	{
-		showMessage(message, "error");
-	}
 });
