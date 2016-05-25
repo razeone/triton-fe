@@ -19,13 +19,6 @@ app.controller("resetController", function($scope, $location, $auth, $routeParam
 		then(function(response)
 		{
 			var data = response.data;
-
-			if(!data.success)
-			{
-				$scope.showError(data.error);
-				return;
-			}
-
 			$location.path("/");
 			$scope.showSuccess("password updated");
 		},

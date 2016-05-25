@@ -4,11 +4,9 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 {
 	$scope.login = function()
 	{
-		if(typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
-		{
-			$scope.showError("mail and password required");
-			return;
-		}
+		var complete = $scope.validField($scope.email, "email");
+		complete = complete && $scope.validField($scope.password, "password");
+		if(!complete) return;
 
 		$scope.credentials =
 		{
@@ -19,13 +17,6 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		$auth.login($scope.credentials).then(function(response)
 		{
 			var data = response.data;
-
-			if(!data.success)
-			{
-				$scope.showError(data.error);
-				return;
-			}
-
 			$scope.showSuccess("access granted");
 			$location.path("/");
 		},
@@ -37,11 +28,11 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 
 	$scope.signup = function()
 	{
-		if(typeof $scope.name == "undefined" || typeof $scope.lastname == "undefined" || typeof $scope.email == "undefined" || typeof $scope.password == "undefined")
-		{
-			$scope.showError("name, lastname, mail and password required");
-			return;
-		}
+		var complete = $scope.validField($scope.email, "email");
+		complete = complete && $scope.validField($scope.password, "password");
+		complete = complete && $scope.validField($scope.name, "name");
+		complete = complete && $scope.validField($scope.lastname, "lastname");
+		if(!complete) return;
 
 		$scope.credentials =
 		{
@@ -54,19 +45,34 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		$auth.signup($scope.credentials).then(function(response)
 		{
 			var data = response.data;
-
-			if(!data.success)
-			{
-				$scope.showError(data.error);
-				return;
-			}
-
 			$location.path("/");
 			$scope.showSuccess("check your mail inbox");
 		},
 		function(response)
 		{
 			$scope.showError(response.data ? response.data.error : "service not available");
+		});
+	};
+
+	$scope.social_auth = function(provider)
+	{
+		if($scope.social_auth_providers.indexOf(provider) < 0)
+		{
+			$scope.showError("auth not available");
+			return;
+		}
+
+		$auth.authenticate(provider)
+		.then(function()
+		{
+			$scope.showSuccess("access granted");
+			$location.path("/");
+		})
+		.catch(function(error)
+		{
+			if(error.error) $scope.showError(error.error);
+			else if(error.data) $scope.showError(error.data.message);
+			else $scope.showError(error);
 		});
 	};
 

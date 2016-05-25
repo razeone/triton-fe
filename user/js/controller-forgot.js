@@ -17,13 +17,6 @@ app.controller("forgotController", function($scope, $location, $auth, $http, toa
 		then(function(response)
 		{
 			var data = response.data;
-
-			if(!data.success)
-			{
-				$scope.showError(data.error);
-				return;
-			}
-
 			$location.path("/");
 			$scope.showSuccess("check your mail inbox");
 		},

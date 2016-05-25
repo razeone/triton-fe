@@ -1,38 +1,17 @@
+var config = require('./config');
 var app = angular.module("App", ["ngRoute", "toaster", "satellizer", "ngAnimate", "nvd3"]);
-
-var accessAPI = "http://microservicios.org/v1";
-var appAPI = "http://microservicios.org/v1";
-
-var endpoints =
-{
-	login: "/auth/login",
-	signup: "/auth/users",
-	logout: "/auth/logout",
-	recover: "/auth/recover",
-	recover_request: "/auth/recover_request",
-	profile: "/profile/profile"
-};
-
-var navigation =
-{
-	login: "templates/login.html",
-	signup: "templates/signup.html",
-	index: "templates/index.html",
-	profiles: "templates/profiles.html",
-	add_profile: "templates/add_profile.html",
-	billing: "templates/billing.html",
-	forgot: "templates/forgot.html",
-	reset: "templates/reset.html",
-	home: "templates/home.html"
-};
-
-var testNavigation = false;
 
 app.run(function($rootScope, toaster)
 {
-	$rootScope.accessAPI = accessAPI;
-	$rootScope.appAPI = appAPI;
-	$rootScope.endpoints = endpoints;
+	$rootScope.accessAPI = config.auth.api;
+	$rootScope.appAPI = config.app.api;
+	$rootScope.endpoints = config.endpoints;
+
+	$rootScope.social_auth_providers = [];
+	for(social in config.auth.social)
+	{
+		$rootScope.social_auth_providers.push(social);
+	}
 
 	var showMessage = function(message, type)
 	{
@@ -54,14 +33,39 @@ app.run(function($rootScope, toaster)
 	{
 		showMessage(message, "error");
 	}
+
+	$rootScope.validField = function(field, fieldName)
+	{
+		if(typeof field == "undefined" || field.length == 0)
+		{
+			$scope.showError(fieldName + " is required");
+			return false;
+		}
+		return true;
+	}
 });
 
 app.config(function($routeProvider, $authProvider)
 {
-	$authProvider.baseUrl = accessAPI;
-	$authProvider.loginUrl = endpoints.login;
-	$authProvider.signupUrl = endpoints.signup;
+	$authProvider.baseUrl = config.auth.api;
+	$authProvider.loginUrl = config.endpoints.login;
+	$authProvider.signupUrl = config.endpoints.signup;
 	$authProvider.authToken = 'JWT';
+
+	$authProvider.facebook
+	({
+		clientId: config.auth.social.facebook
+	});
+
+	$authProvider.github
+	({
+		clientId: config.auth.social.github
+	});
+
+	$authProvider.google
+	({
+		clientId: config.auth.social.google
+	});
 
 	var skipIfLoggedIn = function($q, $location, $auth)
 	{
@@ -79,64 +83,23 @@ app.config(function($routeProvider, $authProvider)
       return deferred.promise;
 	};
 
-	if(testNavigation) loginRequired = skipIfLoggedIn;
+	if(config.navigation.test) loginRequired = skipIfLoggedIn;
 
-	$routeProvider
-	.when("/",
+	var navigation = config.navigation.screens;
+	var templates = config.navigation.templates;
+
+	for(n in navigation)
 	{
-		templateUrl: navigation.index,
-		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
-	})
-	.when("/login",
-	{
-		templateUrl: navigation.login,
-		controller: "AccessController",
-		resolve:{ skipIfLoggedIn: skipIfLoggedIn }
-	})
-	.when("/signup",
-	{
-		templateUrl: navigation.signup,
-		controller: "AccessController",
-		resolve:{ skipIfLoggedIn: skipIfLoggedIn }
-	})
-	.when("/profiles",
-	{
-		templateUrl: navigation.profiles,
-		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
-	})
-	.when("/add_profiles",
-	{
-		templateUrl: navigation.add_profile,
-		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
-	})
-	.when("/billing",
-	{
-		templateUrl: navigation.billing,
-		controller: "IndexController",
-		resolve: { loginRequired: loginRequired }
-	})
-	.when("/forgot",
-	{
-		templateUrl: navigation.forgot,
-		controller: "IndexController",
-		resolve: { skipIfLoggedIn: skipIfLoggedIn }
-	})
-    .when("/home",
-	{
-		templateUrl: navigation.home,
-		controller: "IndexController",
-		resolve: { skipIfLoggedIn: skipIfLoggedIn }
-	})
-	.when("/reset/:token",
-	{
-		templateUrl: navigation.reset,
-		controller: "IndexController",
-		resolve: { skipIfLoggedIn: skipIfLoggedIn }
-	})
-	.otherwise
+		var nav = navigation[n];
+		$routeProvider.when(nav.url,
+		{
+			templateUrl: templates + nav.tpl,
+			controller: nav.ctrl,
+			resolve: { resolve: nav.login ? loginRequired : skipIfLoggedIn }
+		});
+	}
+
+	$routeProvider.otherwise
 	({
 		redirectTo: "/"
 	});
