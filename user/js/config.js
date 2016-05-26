@@ -2,7 +2,7 @@ var config =
 {
 	auth:
 	{
-		api: "http://microservicios.org:8085/v1",
+		api: "http://microservicios.org/v1",
 		social:
 		{
 			facebook: "1016222861747131",
