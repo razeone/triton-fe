@@ -67,35 +67,39 @@ app.config(function($routeProvider, $authProvider)
 		clientId: config.auth.social.google
 	});
 
-	var skipIfLoggedIn = function($q, $location, $auth)
+	var resolver = [];
+	resolver[0] = function($q, $location, $auth) // always
 	{
-      var deferred = $q.defer();
-      if($auth.isAuthenticated()) { deferred.reject(); }
-		else { deferred.resolve(); }
-      return deferred.promise;
+		var deferred = $q.defer();
+		deferred.resolve();
+		return deferred.promise;
 	};
-
-	var loginRequired = function($q, $location, $auth)
+	resolver[1] = function($q, $location, $auth) // login required
 	{
-      var deferred = $q.defer();
-      if($auth.isAuthenticated()) { deferred.resolve(); }
+		var deferred = $q.defer();
+		if($auth.isAuthenticated()) { deferred.resolve(); }
 		else { $location.path("/login"); }
-      return deferred.promise;
+		return deferred.promise;
+	};
+	resolver[2] = function($q, $location, $auth) // skip if logged in
+	{
+		var deferred = $q.defer();
+		if($auth.isAuthenticated()) { $location.path("/"); }
+		else { deferred.resolve(); }
+		return deferred.promise;
 	};
 
-	if(config.navigation.test) loginRequired = skipIfLoggedIn;
-
-	var navigation = config.navigation.screens;
+	var screens = config.navigation.screens;
 	var templates = config.navigation.templates;
 
-	for(n in navigation)
+	for(s in screens)
 	{
-		var nav = navigation[n];
-		$routeProvider.when(nav.url,
+		var screen = screens[s];
+		$routeProvider.when(screen.url,
 		{
-			templateUrl: templates + nav.tpl,
-			controller: nav.ctrl,
-			resolve: { resolve: nav.login ? loginRequired : skipIfLoggedIn }
+			templateUrl: templates + screen.tpl,
+			controller: screen.ctrl,
+			resolve: { resolve: resolver[screen.resolve] }
 		});
 	}
 

@@ -6,6 +6,7 @@ var config =
 		social:
 		{
 			facebook: "1016222861747131",
+			twitter: "",
 			google: "62366115293-ig015o6ffhfqjdtvu4tujuungvqjcp0f.apps.googleusercontent.com",
 			github: "b0ba2b064f12c26025ce"
 		}
@@ -25,63 +26,62 @@ var config =
 	},
 	navigation:
 	{
-		test: false,
 		templates: "templates/",
 		screens:
 		[
 			{
 				url: "/",
 				tpl: "index.html",
-				controller: "IndexController",
-				login: true
+				ctrl: "IndexController",
+				resolve: 1
 			},
 			{
 				url: "/login",
 				tpl: "login.html",
-				controller: "AccessController",
-				login: false
+				ctrl: "AccessController",
+				resolve: 2
 			},
 			{
 				url: "/signup",
 				tpl: "signup.html",
-				controller: "AccessController",
-				login: false
+				ctrl: "AccessController",
+				resolve: 2
 			},
 			{
 				url: "/forgot",
 				tpl: "forgot.html",
-				controller: "IndexController",
-				login: false
+				ctrl: "IndexController",
+				resolve: 2
 			},
 			{
 				url: "/reset/:token",
 				tpl: "reset.html",
-				controller: "IndexController",
-				login: false
+				ctrl: "IndexController",
+				resolve: 2
 			},
 			{
 				url: "/reset/:token",
 				tpl: "reset.html",
-				controller: "IndexController",
-				login: false
+				ctrl: "IndexController",
+				resolve: 2
 			},
 			{
 				url: "/home",
 				tpl: "home.html",
-				controller: "IndexController",
-				login: true
+				ctrl: "IndexController",
+				resolve: 0
 			},
 			{
 				url: "/profiles",
 				tpl: "profiles.html",
-				controller: "IndexController",
-				login: true
+				ctrl: "IndexController",
+				resolve: 1
 			},
 			{
 				url: "/add_profiles",
 				tpl: "add_profile.html",
-				controller: "IndexController",
-				login: true
+				ctrl: "IndexController",
+				resolve: 1
 			}
 		]
 	}
