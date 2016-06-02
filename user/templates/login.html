@@ -20,18 +20,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <button ng-click="social_auth('facebook')">Sign in with Facebook</button>
-						<button ng-click="social_auth('github')">Sign in with Github</button>
-						<button ng-click="social_auth('google')">Sign in with Google</button>
-						<button ng-click="social_auth('twitter')">Sign in with Twitter</button>
-                    </div>
                     <div class="col-md-6 text-center">
                         <a class="btn btn-lg btn-primary" id="registerButton" href="#signup">Regístrate</a>
                     </div>
                     <div class="col-md-6 text-center">
                         <input type="submit" class="btn btn-lg btn-success btn-raised" id="loginButton" value="Ingresar" ng-disabled="loginForm.email.$error.required || loginForm.password.$error.required || loginForm.email.$error.email">
                     </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6 text-center">
+                      <a class="btn btn-lg btn-success btn-raised" ng-click="social_auth('facebook')">Facebook</a>
+                   </div>
+                   <div class="col-md-6 text-center">
+                      <a class="btn btn-lg btn-success btn-raised" ng-click="social_auth('twitter')">Twitter</a>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6 text-center">
+                      <a class="btn btn-lg btn-success btn-raised" ng-click="social_auth('google')">Google</a>
+                   </div>
+                   <div class="col-md-6 text-center">
+                      <a class="btn btn-lg btn-success btn-raised" ng-click="social_auth('github')">Github</a>
+                   </div>
                 </div>
             </form>
             <hr class="colorgraph">
@@ -43,4 +53,3 @@
 </div>
 
 <div ng-include="'templates/footer.html'"></div>
-

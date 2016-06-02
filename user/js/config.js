@@ -33,7 +33,7 @@ var config =
 				url: "/",
 				tpl: "index.html",
 				ctrl: "IndexController",
-				resolve: 1
+				resolve: 0
 			},
 			{
 				url: "/login",
@@ -50,37 +50,31 @@ var config =
 			{
 				url: "/forgot",
 				tpl: "forgot.html",
-				ctrl: "IndexController",
+				ctrl: "ForgotController",
 				resolve: 2
 			},
 			{
 				url: "/reset/:token",
 				tpl: "reset.html",
-				ctrl: "IndexController",
-				resolve: 2
-			},
-			{
-				url: "/reset/:token",
-				tpl: "reset.html",
-				ctrl: "IndexController",
+				ctrl: "ResetController",
 				resolve: 2
 			},
 			{
 				url: "/home",
 				tpl: "home.html",
 				ctrl: "IndexController",
-				resolve: 0
+				resolve: 1
 			},
 			{
 				url: "/profiles",
 				tpl: "profiles.html",
-				ctrl: "IndexController",
+				ctrl: "ProfileController",
 				resolve: 1
 			},
 			{
 				url: "/add_profiles",
 				tpl: "add_profile.html",
-				ctrl: "IndexController",
+				ctrl: "ProfileController",
 				resolve: 1
 			}
 		]
