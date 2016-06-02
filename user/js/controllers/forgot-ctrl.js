@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.controller("forgotController", function($scope, $location, $auth, $http, toaster)
+app.controller("ForgotController", function($scope, $location, $auth, $http, toaster)
 {
 	var recoverRequestService = $scope.accessAPI + $scope.endpoints.recover_request;
 

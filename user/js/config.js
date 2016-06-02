@@ -2,7 +2,7 @@ var config =
 {
 	auth:
 	{
-		api: "http://microservicios.org/v1",
+		api: "http://microservicios.org:8085/v1",
 		social:
 		{
 			facebook: "1016222861747131",
@@ -13,7 +13,7 @@ var config =
 	},
 	app:
 	{
-		api: "http://microservicios.org/v1"
+		api: "http://microservicios.org:8086/v1"
 	},
 	endpoints:
 	{
@@ -62,18 +62,12 @@ var config =
 			{
 				url: "/home",
 				tpl: "home.html",
-				ctrl: "IndexController",
+				ctrl: "HomeController",
 				resolve: 1
 			},
 			{
-				url: "/profiles",
-				tpl: "profiles.html",
-				ctrl: "ProfileController",
-				resolve: 1
-			},
-			{
-				url: "/add_profiles",
-				tpl: "add_profile.html",
+				url: "/profile",
+				tpl: "profile.html",
 				ctrl: "ProfileController",
 				resolve: 1
 			}

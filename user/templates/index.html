@@ -14,11 +14,11 @@
         <li class="inline mt10">
             <a href="">Documentación</a>
         </li>
-        <li class="inline mt10">
-            <a ng-if="!$auth.isAuthenticated()" href="#signup">Sign in</a>
+        <li ng-if="session" class="inline mt10">
+            <a href="#home">Mi Cuenta</a>
         </li>
-        <li class="inline mt10">
-            <a ng-if="!$auth.isAuthenticated()" href="#login">Log in</a>
+        <li ng-if="!session" class="inline mt10">
+            <a href="#login">Iniciar sesión</a>
         </li>
     </ul>
 </section>
@@ -34,11 +34,11 @@
         <li class="inline">
             <a href="">Documentación</a>
         </li>
-        <li class="inline">
-            <a ng-if="!$auth.isAuthenticated()" href="#signup">Sign in</a>
+        <li ng-if="session" class="inline">
+            <a href="#home">Mi Cuenta</a>
         </li>
-        <li class="inline">
-            <a ng-if="!$auth.isAuthenticated()" href="#login">Log in</a>
+        <li ng-if="!session" class="inline">
+            <a href="#login">Iniciar sesión</a>
         </li>
     </ul>
 </section>

@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.controller("resetController", function($scope, $location, $auth, $routeParams, $http, toaster)
+app.controller("ResetController", function($scope, $location, $auth, $routeParams, $http, toaster)
 {
 	var recoverService = $scope.accessAPI + $scope.endpoints.recover;
 	var token = $routeParams.token;
