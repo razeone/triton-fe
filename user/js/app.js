@@ -22,27 +22,27 @@ app.run(function($rootScope, toaster)
 			showCloseButton: true,
 			timeout: 3000
 		});
-	}
+	};
 
 	$rootScope.showSuccess = function(message)
 	{
 		showMessage(message, "alert");
-	}
+	};
 
 	$rootScope.showError = function(message)
 	{
 		showMessage(message, "error");
-	}
+	};
 
 	$rootScope.validField = function(field, fieldName)
 	{
-		if(typeof field == "undefined" || field.length == 0)
+		if(typeof field === "undefined" || field.length === 0)
 		{
 			$scope.showError(fieldName + " is required");
 			return false;
 		}
 		return true;
-	}
+	};
 });
 
 app.config(function($routeProvider, $authProvider)

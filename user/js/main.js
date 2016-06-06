@@ -9,7 +9,7 @@ var animate = require ('../node_modules/angular-animate/angular-animate.min.js')
 var toaster = require('../node_modules/angularjs-toaster/toaster.min.js');
 var satellizer = require('../node_modules/satellizer/satellizer.min.js');
 $.material.init();
-//require('../css/main.css');
+
 var app = require('./app.js');
 var access_controller = require('./controllers/access-ctrl.js');
 var index_controller = require('./controllers/index-ctrl.js');
