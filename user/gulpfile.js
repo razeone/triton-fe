@@ -44,7 +44,7 @@ gulp.task('browserify-serve', function(){
     .pipe(gulp.dest('./js/'));
 });
 
-gulp.task('browserify', function(){   
+/*gulp.task('browserify', function(){
   
   return browserify('./js/main.js')
     .bundle()
@@ -52,7 +52,7 @@ gulp.task('browserify', function(){
     .pipe(buffer())
     .pipe(gutil.env.env === 'prod' ? $.uglify() : gutil.noop())
     .pipe(gulp.dest('./js/'));
-});
+});*/
 
 gulp.task('jshint', function () {
   return gulp.src(['js/**/*.js', '!js/bundle.js'])
