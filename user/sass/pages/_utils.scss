@@ -389,12 +389,7 @@ a, a:hover, a:active{
 /*Social Login*/
 
 .social-btn{
-    border-radius: 4px;
-    color: white;
-    font-size: 14px;
-    width: 205px;
-    display: inline-block;
-    padding: 8px;
+    color: white !important;
     margin-bottom: 15px;
     border-width: 1px;
     border-style: solid;
@@ -404,35 +399,35 @@ a, a:hover, a:active{
         vertical-align: middle;
     }
     &:hover{
-        background-color: white;
+        background-color: white !important;
     }
 }
 .login-fb {
     border-color: #2d5073;
-    background-color: #3b5998;
+    background: #3b5998 !important;
     &:hover{
-        color: #3b5998;
+        color: #3b5998 !important;
     }
 }
 .login-tw {
     border-color: #007aa6;
-    background-color: #008cbf;
+    background: #008cbf !important;
     &:hover{
-        color: #008cbf;
+        color: #008cbf !important;
     }
 }
 .login-gp {
     border-color: darkred;
-    background-color: #dd4b39;
+    background: #dd4b39 !important;
     &:hover{
-        color: #dd4b39;
+        color: #dd4b39 !important;
     }
 }
 .login-gh{
     border-color: #000;
-    background-color: #444;
+    background: #444 !important;
     &:hover{
-        color: #444;
+        color: #444 !important;
     }
 }
 
