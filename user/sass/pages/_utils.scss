@@ -11,6 +11,10 @@ header{
     }
 }
 
+a, a:hover, a:active{
+    text-decoration: none;
+}
+
 .navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:focus, .navbar .navbar-nav>.active>a:hover{
     background-color: transparent;
     border-bottom: 2px solid white;
@@ -380,6 +384,56 @@ header{
 
 .omega{
   padding-right: 0;
+}
+
+/*Social Login*/
+
+.social-btn{
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    width: 205px;
+    display: inline-block;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-width: 1px;
+    border-style: solid;
+    transition: 0.25s;
+    i{
+        margin-left: 25px;
+        vertical-align: middle;
+    }
+    &:hover{
+        background-color: white;
+    }
+}
+.login-fb {
+    border-color: #2d5073;
+    background-color: #3b5998;
+    &:hover{
+        color: #3b5998;
+    }
+}
+.login-tw {
+    border-color: #007aa6;
+    background-color: #008cbf;
+    &:hover{
+        color: #008cbf;
+    }
+}
+.login-gp {
+    border-color: darkred;
+    background-color: #dd4b39;
+    &:hover{
+        color: #dd4b39;
+    }
+}
+.login-gh{
+    border-color: #000;
+    background-color: #444;
+    &:hover{
+        color: #444;
+    }
 }
 
 
