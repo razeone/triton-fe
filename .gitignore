@@ -6,4 +6,5 @@ user/css/site/main.css.map
 user/.sass-cache/
 user/.tmp/css/*
 user/js/bundle.min.js
+user/js/build/*
 npm-debug.log
