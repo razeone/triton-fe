@@ -2,29 +2,30 @@ var app = angular.module("App");
 
 app.controller("ResetController", function($scope, $location, $auth, $routeParams, $http, toaster)
 {
-	var recoverService = $scope.accessAPI + $scope.endpoints.recover;
+	var service = $scope.service("auth", "recover");
 	var token = $routeParams.token;
 
 	$scope.reset = function()
 	{
 		var password = $scope.newPass;
 
-		var data =
+		var params =
 		{
 			token: token,
 			password: password
 		};
 
-		$http.post(recoverService, data).
+		$http.post(service, params).
 		then(function(response)
 		{
 			var data = response.data;
+			
 			$location.path("/");
-			$scope.showSuccess("password updated");
+			$scope.success("password updated");
 		},
 		function(response)
 		{
-			$scope.showError(response.data ? response.data.error : "service not available");
+			$scope.error(response.data ? response.data.error : "service not available");
 		});
     };
 });

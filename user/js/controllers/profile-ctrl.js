@@ -2,13 +2,13 @@ var app = angular.module("App");
 
 app.controller("ProfileController", function($scope, $location, $auth, $http, toaster)
 {
-	var profileService = $scope.appAPI + $scope.endpoints.profile;
+	var service = $scope.service("app", "profile");
 
 	$scope.formData = {};
 
 	$scope.getProfile = function()
 	{
-		$http.get(profileService)
+		$http.get(service)
 		.then(function(response)
 		{
 			var profile = response.data;
@@ -18,7 +18,7 @@ app.controller("ProfileController", function($scope, $location, $auth, $http, to
 		},
 		function(error)
 		{
-			$scope.showError(response.data ? response.data.error : "service not available");
+			$scope.error(response.data ? response.data.error : "service not available");
 		});
 	};
 
@@ -30,14 +30,14 @@ app.controller("ProfileController", function($scope, $location, $auth, $http, to
 			lastname: $scope.formData.name,
 		};
 
-		$http.post(profileService, params)
+		$http.post(service, params)
 		.then(function(response)
 		{
-			$scope.showSuccess("Changes saved");
+			$scope.success("Changes saved");
 		},
 		function(error)
 		{
-			$scope.showError(response.data ? response.data.error : "service not available");
+			$scope.error(response.data ? response.data.error : "service not available");
 		});
 	};
 

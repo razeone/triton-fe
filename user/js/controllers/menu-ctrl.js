@@ -2,19 +2,21 @@ var app = angular.module("App");
 
 app.controller("MenuController", function($scope, $location, $auth, $http)
 {
-	var logoutService = $scope.accessAPI + $scope.endpoints.logout;
+	var service = $scope.service("auth", "logout");
 
 	$scope.logout = function()
 	{
-		$http.post(logoutService, {}).
+		$http.post(service, {}).
 		success(function()
 		{
 			$auth.logout();
+
 			$location.path("/login");
 		}).
 		error(function()
 		{
 			$auth.logout();
+
 			$location.path("/login");
 		});
 	};
