@@ -1,0 +1,80 @@
+<div ng-include="'templates/header.html'"></div>
+
+<div class="row no-margin">
+    <div class="container mt30 dashboard">
+    <div ng-include="'templates/menu.html'"></div>
+       <div class="col-md-8 col-md-offset-2 well clearfix">
+            <div class="row no-margin">
+                <div class="shortcuts">
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">dns</i><br>
+                        Servidores
+                    </a>
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">supervisor_account</i><br>
+                        Usuarios
+                    </a>
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">http</i><br>
+                        Dominios
+                    </a>
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">assessment</i><br>
+                        Estadísticas
+                    </a>
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">credit_card</i><br>
+                        Facturación
+                    </a>
+                    <a class="col-xs-6 col-sm-2 text-center" href="">
+                        <i class="medium material-icons">live_help</i><br>
+                        Documentación
+                    </a>
+                </div>
+            </div>
+            <div class="row no-margin">
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <address>
+                            Juanito López <br>
+                            Av. siempre viva 123 <br>
+                            México, 50000 <br>
+                            juanito@lalalal.com
+                        </address>
+                    </fieldset>
+                    <a class="bold text-info" ng-href="#profile">Editar Perfil</a>
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Datos de Facturación</legend>
+                        <address>
+                            Juanito López <br>
+                            Av. siempre viva 123 <br>
+                            México, 50000 <br>
+                            juanito@lalalal.com
+                        </address>
+                    </fieldset>
+                    <a class="bold text-info" ng-href="#profile">Editar Facturación</a>
+                </div>
+            </div>
+            <div class="row no-margin">
+                <fieldset class="col-md-12">
+                    <legend>Servicios Contratados</legend>
+                    <a href=""><h4>Servidores <span class="badge">3</span></h4></a>
+                    <a href=""><h4>Dominios <span class="badge">2</span></h4></a>
+                </fieldset>
+            </div>
+            <div class="row no-margin">
+                <fieldset class="col-md-12">
+                    <legend>Resumen de Notificaciónes</legend>
+                    <p><strong>Recibos pendientes:</strong>No se siga haciendo wey y páguenos para que sigamos brindándole el mejor servicio, pinche moroso. <a href="">Pagar ></a></p>
+                </fieldset>
+            </div>
+                <div class="row no-margin graphs">
+                    <nvd3 options="options" data="data"></nvd3>
+                </div>
+            </div>
+       </div>
+    </div>
+</div>

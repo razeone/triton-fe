@@ -1,80 +1,189 @@
-<div ng-include="'templates/header.html'"></div>
-
-<div class="row no-margin">
-    <div class="container mt30 dashboard">
-    <div ng-include="'templates/menu.html'"></div>
-       <div class="col-md-8 col-md-offset-2 well clearfix">
-            <div class="row no-margin">
-                <div class="shortcuts">
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">dns</i><br>
-                        Servidores
-                    </a>
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">supervisor_account</i><br>
-                        Usuarios
-                    </a>
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">http</i><br>
-                        Dominios
-                    </a>
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">assessment</i><br>
-                        Estadísticas
-                    </a>
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">credit_card</i><br>
-                        Facturación
-                    </a>
-                    <a class="col-xs-6 col-sm-2 text-center" href="">
-                        <i class="medium material-icons">live_help</i><br>
-                        Documentación
-                    </a>
-                </div>
+<div scroll>
+<a class="burger absolute rt hidden-sm hidden-md hidden-lg" ng-class="{burger2 : peopleIn}">
+    <i class="fa fa-bars" ng-click="burger = !burger"></i>
+</a>
+<section class="menu-mb-home menu-home absolute tp p15 init hidden-sm hidden-md hidden-lg" ng-show="burger">
+    <h3 class="no-margin">Triton Project</h3>
+    <ul class="no-padding no-margin bold">
+        <li class="inline mt10">
+            <a href="">Plataforma</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Servicios</a>
+        </li>
+        <li class="inline mt10">
+            <a href="">Documentación</a>
+        </li>
+        <li ng-if="session" class="inline mt10">
+            <a href="#account">Mi Cuenta</a>
+        </li>
+        <li ng-if="!session" class="inline mt10">
+            <a href="#login">Iniciar sesión</a>
+        </li>
+    </ul>
+</section>
+<section class="menu-home init fixed tp p15 hidden-xs" ng-class="{scrolling : peopleIn, init: !peopleIn}">
+    <h3 class="no-margin inline">Triton Project</h3>
+    <ul class="no-padding no-margin pull-right bold">
+        <li class="inline">
+            <a href="">Plataforma</a>
+        </li>
+        <li class="inline">
+            <a href="">Servicios</a>
+        </li>
+        <li class="inline">
+            <a href="">Documentación</a>
+        </li>
+        <li ng-if="session" class="inline">
+            <a href="#account">Mi Cuenta</a>
+        </li>
+        <li ng-if="!session" class="inline">
+            <a href="#login">Iniciar sesión</a>
+        </li>
+    </ul>
+</section>
+<section class="row top-home no-margin animloadHead">
+    <div class="container">
+        <div class="col-lg-12 text-center mb30">
+            <p class="icon-home"><i class="material-icons text-primary">usb</i></p>
+            <h1 class="bold">TRITON PROJECT</h1>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi blanditiis iste beatae optio sapiente pariatur.</h3>
+        </div>
+            <div class="col-lg-12 mt30 text-center">
+                <form action="">
+                    <div class="white-form">
+                        <input type="text" id="addon2" class="" placeholder="ej. www.tudominio.com">
+                        <button type="submit" class="btn btn-default btn-raised">
+                            <i class="material-icons">search</i>
+                            Buscar dominio gratis
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="row no-margin">
-                <div class="col-md-6">
-                    <fieldset>
-                        <legend>Datos Personales</legend>
-                        <address>
-                            Juanito López <br>
-                            Av. siempre viva 123 <br>
-                            México, 50000 <br>
-                            juanito@lalalal.com
-                        </address>
-                    </fieldset>
-                    <a class="bold text-info" ng-href="#profile">Editar Perfil</a>
-                </div>
-                <div class="col-md-6">
-                    <fieldset>
-                        <legend>Datos de Facturación</legend>
-                        <address>
-                            Juanito López <br>
-                            Av. siempre viva 123 <br>
-                            México, 50000 <br>
-                            juanito@lalalal.com
-                        </address>
-                    </fieldset>
-                    <a class="bold text-info" ng-href="#profile">Editar Facturación</a>
-                </div>
-            </div>
-            <div class="row no-margin">
-                <fieldset class="col-md-12">
-                    <legend>Servicios Contratados</legend>
-                    <a href=""><h4>Servidores <span class="badge">3</span></h4></a>
-                    <a href=""><h4>Dominios <span class="badge">2</span></h4></a>
-                </fieldset>
-            </div>
-            <div class="row no-margin">
-                <fieldset class="col-md-12">
-                    <legend>Resumen de Notificaciónes</legend>
-                    <p><strong>Recibos pendientes:</strong>No se siga haciendo wey y páguenos para que sigamos brindándole el mejor servicio, pinche moroso. <a href="">Pagar ></a></p>
-                </fieldset>
-            </div>
-                <div class="row no-margin graphs">
-                    <nvd3 options="options" data="data"></nvd3>
-                </div>
-            </div>
-       </div>
     </div>
+</section>
+<section class="row plans-home no-margin" >
+    <div class="container">
+        <h2 class="text-center pb30">PLANES</h2>
+        <div class="col-md-4 enterOut" ng-class="{enter : change, enterOut: !change}">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="text-center">PLAN 1</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aperiam laborum dignissimos impedit sed perferendis error cumque assumenda debitis, libero dolorum, modi laboriosam explicabo quisquam. Explicabo veniam fuga placeat perspiciatis.</p>
+                    <ul>
+                        <li>Beneficio 1</li>
+                        <li>Beneficio 2</li>
+                        <li>Beneficio 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 enterOut" ng-class="{enter2 : change, enterOut: !change}">
+           <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="text-center">PLAN 2</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aperiam laborum dignissimos impedit sed perferendis error cumque assumenda debitis, libero dolorum, modi laboriosam explicabo quisquam. Explicabo veniam fuga placeat perspiciatis.</p>
+                    <ul>
+                        <li>Beneficio 1</li>
+                        <li>Beneficio 2</li>
+                        <li>Beneficio 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 enterOut" ng-class="{enter3 : change, enterOut: !change}">
+           <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="text-center">PLAN 3</h3>
+                </div>
+                <div class="panel-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aperiam laborum dignissimos impedit sed perferendis error cumque assumenda debitis, libero dolorum, modi laboriosam explicabo quisquam. Explicabo veniam fuga placeat perspiciatis.</p>
+                    <ul>
+                        <li>Beneficio 1</li>
+                        <li>Beneficio 2</li>
+                        <li>Beneficio 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-center"><a href="" class="btn btn-raised btn-primary">Ver más planes</a></h4>
+</section>
+<section class="row no-margin register-home">
+    <div class="container">
+        <div class="col-lg-12 text-center An" ng-class="{leftAn : changeRegister, An : !changeRegister}">
+            <h2 class="text-center pb30">¡REGÍSTRATE AHORA!</h2>
+            <a href="#signup" class="btn btn-success btn-raised btn-lg">Registrarme</a>
+        </div>
+    </div>
+</section>
+<section class="row no-margin about-home">
+   <div class="container">
+        <h2 class="text-center pb30">NUESTRO EQUIPO</h2>
+        <div class="col-md-4 rightEnterOut" ng-class="{rightEnter : peopleIn , rightEnterOut : !peopleIn}">
+           <div class="panel panel-default">
+                <div class="panel-heading" style="background:url(images/ladygodinez.jpeg); background-size:cover;">
+                    <h2>Lady Godínez</h2>
+                </div>
+                <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi a, voluptas qui eum corrupti laborum adipisci voluptates voluptatem nemo, nostrum amet molestiae minima minus cupiditate porro assumenda nihil quos quam!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 rightEnterOut" ng-class="{rightEnter2 : peopleIn , rightEnterOut : !peopleIn}">
+           <div class="panel panel-default">
+                <div class="panel-heading" style="background:url(images/k-bigpic.jpg); background-size:cover;">
+                    <h2>Señorito Hipster</h2>
+                </div>
+                <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi unde fugiat ea ratione natus, corrupti eaque quaerat velit voluptate in, repellat quos sapiente, eos laborum officiis dolorum commodi odit similique?
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 rightEnterOut" ng-class="{rightEnter3 : peopleIn , rightEnterOut : !peopleIn}">
+           <div class="panel panel-default">
+                <div class="panel-heading" style="background:url(images/gonidez.jpeg); background-size:cover;">
+                    <h2>Lord Godínez</h2>
+                </div>
+                <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium odit assumenda cum, esse obcaecati atque, at mollitia rerum asperiores ducimus! Accusantium at, labore magni, qui pariatur explicabo saepe eius ab.
+                </div>
+            </div>
+        </div>
+   </div>
+</section>
+<section class="fixed w100 bt footer-home">
+    <div class="container-flex text-primary pt10 pl15 pr15">
+        <p class="icon-home pull-left"><i class="material-icons text-primary">usb</i>
+        <ul class="pull-right text-right no-padding">
+            <li class="inline">
+                <a href=""><i class="fa fa-facebook fa-2x mr10"></i></a>
+            </li>
+            <li class="inline">
+                <a href=""><i class="fa fa-twitter fa-2x mr10"></i></a>
+            </li>
+            <li class="inline">
+                <a href=""><i class="fa fa-envelope fa-2x"></i></a>
+            </li>
+        </ul>
+        </p>
+    </div>
+</section>
 </div>
+<!--<section class="contact-home pt30">
+    <div class="container">
+        <div class="col-md-4">
+            <h3>Contáctanos:</h3>
+            <p>Av. Siempre viva 123</p>
+            <h4>CDMX</h4>
+            <p>correo.wow@triton.com</p>
+            <p>correo.awesome@triton.com</p>
+
+            <p>Tels. 555-555-555</p>
+        </div>
+    </div>
+</section>-->

@@ -33,31 +33,31 @@ app.config(function($routeProvider, $authProvider)
 app.run(function($rootScope, toaster)
 {
 	$rootScope.service = function(type, service)
-   {
-      return config.api[type] + content.services[service];
-   }
+	{
+		return config.api[type] + content.services[service];
+	}
 
 	$rootScope.success = function(message)
-   {
-      toaster.pop
-      ({
-         type: "alert",
-         body: message,
-         showCloseButton: true,
-         timeout: 2000
-      });
-   }
+	{
+		toaster.pop
+		({
+			type: "alert",
+			body: message,
+			showCloseButton: true,
+			timeout: 2000
+		});
+	}
 
 	$rootScope.error = function(message)
-   {
-      toaster.pop
-      ({
-         type: "error",
-         body: message,
-         showCloseButton: true,
-         timeout: 3000
-      });
-   }
+	{
+		toaster.pop
+		({
+			type: "error",
+			body: message,
+			showCloseButton: true,
+			timeout: 3000
+		});
+	}
 
 	$rootScope.field = function(field, fieldName)
 	{

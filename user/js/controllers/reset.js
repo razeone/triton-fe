@@ -19,7 +19,7 @@ app.controller("ResetController", function($scope, $location, $auth, $routeParam
 		then(function(response)
 		{
 			var data = response.data;
-			
+
 			$location.path("/");
 			$scope.success("password updated");
 		},
@@ -27,5 +27,5 @@ app.controller("ResetController", function($scope, $location, $auth, $routeParam
 		{
 			$scope.error(response.data ? response.data.error : "service not available");
 		});
-    };
+	};
 });

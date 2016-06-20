@@ -13,8 +13,8 @@ var content =
 	[
 		{
 			url: '/',
-			template: 'index.html',
-			controller: 'IndexController',
+			template: 'home.html',
+			controller: 'HomeController',
 			resolve: 'default'
 		},
 		{
@@ -42,9 +42,9 @@ var content =
 			resolve: 'skip_if_logged'
 		},
 		{
-			url: '/home',
-			template: 'home.html',
-			controller: 'HomeController',
+			url: '/account',
+			template: 'account.html',
+			controller: 'AccountController',
 			resolve: 'login_required'
 		},
 		{

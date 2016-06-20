@@ -25,5 +25,5 @@ app.controller("ForgotController", function($scope, $location, $auth, $http, toa
 		{
 			$scope.error(response.data ? response.data.error : "service not available");
 		});
-    };
+	};
 });
