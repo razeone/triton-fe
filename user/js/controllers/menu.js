@@ -2,10 +2,10 @@ var app = angular.module("App");
 
 app.controller("MenuController", function($scope, $location, $auth, $http)
 {
-	var service = $scope.service("auth", "logout");
-
 	$scope.logout = function()
 	{
+		var service = $scope.service("auth", "user", "logout");
+
 		$http.post(service, {}).
 		success(function()
 		{

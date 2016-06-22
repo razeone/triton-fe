@@ -2,23 +2,15 @@ var app = angular.module("App");
 
 app.controller("ProfileController", function($scope, $location, $auth, $http, toaster)
 {
-	var service = $scope.service("app", "profile");
-
 	$scope.formData = {};
 
 	$scope.getProfile = function()
 	{
-		$http.get(service)
-		.then(function(response)
+		$scope.call("app", "user", "profile", {}, "get", function(response)
 		{
-			var profile = response.data;
-			$scope.formData.name = profile.name;
-			$scope.formData.lastname = profile.lastname;
-			$scope.formData.mail = profile.email;
-		},
-		function(error)
-		{
-			$scope.error(response.data ? response.data.error : "service not available");
+			$scope.formData.name = response.name;
+			$scope.formData.lastname = response.lastname;
+			$scope.formData.mail = response.email;
 		});
 	};
 
@@ -30,14 +22,10 @@ app.controller("ProfileController", function($scope, $location, $auth, $http, to
 			lastname: $scope.formData.name,
 		};
 
-		$http.post(service, params)
-		.then(function(response)
+		$scope.call("auth", "user", "profile", params, "post", function(response)
 		{
 			$scope.success("Changes saved");
-		},
-		function(error)
-		{
-			$scope.error(response.data ? response.data.error : "service not available");
+			$location.path("/account");
 		});
 	};
 

@@ -2,9 +2,9 @@ function init(content)
 {
 	var helper = {};
 
-	var services = content.services;
-	var home = services.home ? services.home : "/";
-	var login = services.login ? services.login : "/login";
+	var site = content.site;
+	var home = site.home ? site.home : "/";
+	var login = site.login ? site.login : "/login";
 
 
 	var resolver = {};
@@ -37,7 +37,7 @@ function init(content)
 
 	var createNavigation = function($routeProvider)
 	{
-		var navigation = content.navigation;
+		var navigation = site.navigation;
 
 		for(n in navigation)
 		{

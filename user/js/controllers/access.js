@@ -4,38 +4,33 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 {
 	$scope.login = function()
 	{
-		var complete = $scope.field($scope.email, "email");
-		complete = complete && $scope.field($scope.password, "password");
-		if(!complete) return;
-
-		$scope.credentials =
+		var form =
 		{
 			email: $scope.email,
 			password: $scope.password
 		};
 
-		$auth.login($scope.credentials).then(function(response)
+		var params = $scope.params(form, ["email", "password"], []);
+		if(params == null) return;
+
+		$auth.login(form).then(function(response)
 		{
 			var data = response.data;
 
-			$location.path("/");
+			$location.path("/account");
 			$scope.success("access granted");
 		},
 		function(response)
 		{
-			$scope.error(response.data ? response.data.error : "service not available");
+			var data = error.data;
+			var message = data ? (data.msg ? data.msg : "service not found") : "service not available";
+			$scope.error(message);
 		});
 	};
 
 	$scope.signup = function()
 	{
-		var complete = $scope.field($scope.email, "email");
-		complete = complete && $scope.field($scope.password, "password");
-		complete = complete && $scope.field($scope.name, "name");
-		complete = complete && $scope.field($scope.lastname, "lastname");
-		if(!complete) return;
-
-		$scope.credentials =
+		var form =
 		{
 			email: $scope.email,
 			password: $scope.password,
@@ -43,15 +38,21 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 			lastname: $scope.lastname
 		};
 
-		$auth.signup($scope.credentials).then(function(response)
+		var params = $scope.params(form, ["email", "password", "name", "lastname"], []);
+		if(params == null) return;
+
+		$auth.signup(form).then(function(response)
 		{
 			var data = response.data;
+
 			$location.path("/");
 			$scope.success("check your mail inbox");
 		},
 		function(response)
 		{
-			$scope.error(response.data ? response.data.error : "service not available");
+			var data = error.data;
+			var message = data ? (data.msg ? data.msg : "service not found") : "service not available";
+			$scope.error(message);
 		});
 	};
 
@@ -67,7 +68,7 @@ app.controller("AccessController", function($scope, $location, $auth, $http, toa
 		.then(function()
 		{
 			$scope.success("access granted");
-			$location.path("/");
+			$location.path("/account");
 		})
 		.catch(function(error)
 		{

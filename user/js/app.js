@@ -1,73 +1,33 @@
+var app = angular.module("App", ["ngRoute", "satellizer", "toaster", "ngAnimate", "nvd3"]);
 var config = require('./config');
 var content = require('./content');
-
-var app = angular.module("App", ["ngRoute", "satellizer", "toaster", "ngAnimate", "nvd3"]);
-var navigation = require('./navigation')(content);
 
 
 app.config(function($routeProvider, $authProvider)
 {
 	$authProvider.baseUrl = config.api.auth;
-	$authProvider.loginUrl = content.services.login;
-	$authProvider.signupUrl = content.services.signup;
+	$authProvider.loginUrl = content.services.user.login;
+	$authProvider.signupUrl = content.services.user.signup;
 	$authProvider.authToken = 'JWT';
 
-	$authProvider.facebook
-	({
-		clientId: config.social_auth.facebook
-	});
+	for(provider in config.social_auth)
+	{
+		$authProvider[provider]
+		({
+			clientId: config.social_auth[provider]
+		});
+	}
 
-	$authProvider.github
-	({
-		clientId: config.social_auth.github
-	});
-
-	$authProvider.google
-	({
-		clientId: config.social_auth.google
-	});
-
+	var navigation = require('./helpers/navigation')(content);
 	navigation.create($routeProvider);
 });
 
-app.run(function($rootScope, toaster)
+app.run(function($rootScope, $http, toaster)
 {
-	$rootScope.service = function(type, service)
-	{
-		return config.api[type] + content.services[service];
-	}
-
-	$rootScope.success = function(message)
-	{
-		toaster.pop
-		({
-			type: "alert",
-			body: message,
-			showCloseButton: true,
-			timeout: 2000
-		});
-	}
-
-	$rootScope.error = function(message)
-	{
-		toaster.pop
-		({
-			type: "error",
-			body: message,
-			showCloseButton: true,
-			timeout: 3000
-		});
-	}
-
-	$rootScope.field = function(field, fieldName)
-	{
-		if(typeof field === "undefined" || field.length === 0)
-		{
-			$scope.error(fieldName + " is required");
-			return false;
-		}
-		return true;
-	};
+	var utils = require('./helpers/utils')(content);
+	utils.services($rootScope, config.api, $http);
+   utils.alerts($rootScope, toaster);
+   utils.form($rootScope);
 
 	$rootScope.social_auth_providers = [];
 	for(social in config.social_auth)
