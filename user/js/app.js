@@ -22,12 +22,17 @@ app.config(function($routeProvider, $authProvider)
 	navigation.create($routeProvider);
 });
 
-app.run(function($rootScope, $http, toaster)
+app.run(function($rootScope, $auth, $http, $location, toaster)
 {
-	var utils = require('./helpers/utils')(content);
-	utils.services($rootScope, config.api, $http);
-   utils.alerts($rootScope, toaster);
-   utils.form($rootScope);
+	var alerts = require('./helpers/alerts')(toaster);
+	var validation = require('./helpers/validation')();
+	var services = require('./helpers/services')(config.api, content.services, $http, alerts.error);
+
+	$rootScope.success = alerts.success;
+   $rootScope.error = alerts.error;
+   $rootScope.validation = validation;
+   $rootScope.call = services.call;
+   $rootScope.session = $auth.isAuthenticated;
 
 	$rootScope.social_auth_providers = [];
 	for(social in config.social_auth)

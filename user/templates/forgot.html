@@ -3,22 +3,29 @@
 <div class="container top-cont">
     <div class="row no-margin">
         <div class="col-md-6 col-md-offset-3 well">
+
             <h1 class="text-center page-header">Olvidé mi contraseña</h1>
+
             <p>Para poder restablecer tu contraseña, necesitas escribir el correo con el que estás registrado en la aplicación:</p>
+
             <form class="center-block form-horizontal" name="forgot_pass" ng-submit="rescue()">
+
                 <div class="form-group">
-                    <input type="email" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="email" autocomplete="off" required>
+                    <input type="email" class="form-control input-lg" placeholder="Correo Electrónico" name="email" id="email" ng-model="form.email" autocomplete="off" required>
                     <span ng-show="forgot_pass.email.$error.email" class="text-danger">Escribe un correo válido</span>
                 </div>
+
                 <div class="row">
                     <div class="col-md-6 text-center">
                         <a href="#login" class="btn btn-warning btn-lg">Cancelar</a>
                     </div>
                     <div class="col-md-6 text-center">
-                        <input type="submit" value="Recuperar" class="btn btn-lg btn-success btn-raised" ng-disabled="!email">
+                        <input type="submit" value="Recuperar" class="btn btn-lg btn-success btn-raised" ng-disabled="!forgot_pass.$valid" />
                     </div>
                 </div>
+
             </form>
+
         </div>
     </div>
 </div>

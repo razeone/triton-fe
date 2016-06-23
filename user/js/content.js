@@ -11,7 +11,7 @@ var content =
 			login: "/auth/login",
 			signup: "/auth/users",
 			logout: "/auth/logout",
-			recover: "/auth/recover",
+			recover: "/auth/recover_password",
 			recover_request: "/auth/recover_request",
 			profile: "/profile/profile"
 		}

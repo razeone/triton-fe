@@ -1,8 +1,11 @@
 var app = angular.module("App");
 
-app.controller("ProfileController", function($scope, $location, $auth, $http, toaster)
+app.controller("ProfileController", function($scope, $location)
 {
+	var val = $scope.validation;
+
 	$scope.formData = {};
+
 
 	$scope.getProfile = function()
 	{
@@ -16,11 +19,8 @@ app.controller("ProfileController", function($scope, $location, $auth, $http, to
 
 	$scope.saveProfile = function()
 	{
-		var params =
-		{
-			name: $scope.formData.name,
-			lastname: $scope.formData.name,
-		};
+		var params = val.params($scope.formData, ["name", "lastname"]);
+		if(params == null) { $scope.error("params required"); return; };
 
 		$scope.call("auth", "user", "profile", params, "post", function(response)
 		{

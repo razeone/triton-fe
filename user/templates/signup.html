@@ -3,28 +3,32 @@
 <div class="container top-cont">
     <div class="row no-margin">
         <div class="col-sm-6 col-sm-offset-3 well">
+
             <h2 class="page-header text-center">Registro</h2><br>
+
             <div class="row">
+
                 <div class="col-md-12">
                     <form ng-submit="signup()" name="registerForm">
+
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Nombre(s)" tabindex="5" ng-model="name" required>
+                            <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Nombre(s)" tabindex="5" ng-model="form.name" required>
                             <span ng-show="registerForm.name.$error.required" class="text-danger">Por favor, escribe tu Nombre.</span>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Apellido(s)" tabindex="5" ng-model="lastname" required>
+                            <input type="text" name="lastname" id="lastname" class="form-control input-lg" placeholder="Apellido(s)" tabindex="5" ng-model="form.lastname" required>
                             <span ng-show="registerForm.lastname.$error.required" class="text-danger">Debes escribir al menos un Apellido.</span>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo Electronico" tabindex="5" ng-model="email" required>
+                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Correo Electronico" tabindex="5" ng-model="form.email" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" id="password" ng-model="password" class="form-control input-lg" placeholder="Contraseña" tabindex="6" ng-model="password" required ng-minlength="8">
+                            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" tabindex="6" ng-model="form.password" required ng-minlength="8">
                             <span ng-show="registerForm.password.$error.minlength" class="text-danger">La contraseña debe contener al menos 8 caracteres</span>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="confirm" id="password_confirmation" class="form-control input-lg" placeholder="Confirmar Contraseña" tabindex="7" ng-model="confirm" required>
-                            <span ng-show="password != confirm" class="text-danger">Las contraseñas no son iguales</span>
+                            <input type="password" name="confirm" id="password_confirmation" class="form-control input-lg" placeholder="Confirmar Contraseña" tabindex="7" ng-model="form.confirm" required>
+                            <span ng-show="form.password != form.confirm" class="text-danger">Las contraseñas no son iguales</span>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
@@ -34,20 +38,25 @@
                                 Estoy de acuerdo</label>
                             </div>
                         </div>
-                                <p>Al hacer clic en <span class="label bold label-primary">Registrarse</span>,
-                                usted acepta los <a href="" data-toggle="modal" ng-click="toggleModal()">
-                                Términos y Condiciones</a> establecidos por este sitio.</p>
+
+                        <p>Al hacer clic en <span class="label bold label-primary">Registrarse</span>,
+                        usted acepta los <a href="" data-toggle="modal" ng-click="toggleModal()">
+                        Términos y Condiciones</a> establecidos por este sitio.</p>
+
                         <hr class="colorgraph">
-                        <form ng-submit="signup()" class="row">
+
+                        <div class="row">
                             <div class="col-md-6 text-center">
                                 <a class="btn btn-danger btn-lg" href="#login">Cancelar</a>
                             </div>
                             <div class="col-md-6 text-center">
-                                <input type="submit" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="registerForm.$invalid || password != confirm">
+                                <input type="submit" value="Registrarse" name="Registrarse" class="btn btn-lg btn-primary btn-raised" ng-disabled="registerForm.$invalid || form.password != form.confirm">
                             </div>
-                        </form>
+                        </div>
+
                     </form>
                 </div>
+
                 <!--Terminos & condiciones-->
                 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="t_and_c_m" aria-hidden="true">
                     <div class="modal-dialog">
@@ -66,7 +75,9 @@
                         </div>
                     </div>
                 </div><!-- end terminos-->
+
             </div>
+
         </div>
     </div>
 </div>

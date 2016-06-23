@@ -1,58 +1,47 @@
 var app = angular.module("App");
 
-app.controller("AccessController", function($scope, $location, $auth, $http, toaster)
+app.controller("AccessController", function($scope, $auth, $location)
 {
+	var val = $scope.validation;
+
+	$scope.form = {};
+
+
 	$scope.login = function()
 	{
-		var form =
-		{
-			email: $scope.email,
-			password: $scope.password
-		};
+		var params = val.params($scope.form, ["email", "password"]);
+		if(params == null) { $scope.error("params required"); return; }
 
-		var params = $scope.params(form, ["email", "password"], []);
-		if(params == null) return;
-
-		$auth.login(form).then(function(response)
+		if(!val.email(params.email))
 		{
-			var data = response.data;
+			$scope.error("email invalid");
+			return;
+		}
+
+		$scope.call("auth", "user", "login", params, "post", function(response)
+		{
+			$auth.setToken(response.token);
 
 			$location.path("/account");
 			$scope.success("access granted");
-		},
-		function(response)
-		{
-			var data = error.data;
-			var message = data ? (data.msg ? data.msg : "service not found") : "service not available";
-			$scope.error(message);
 		});
 	};
 
 	$scope.signup = function()
 	{
-		var form =
+		var params = val.params($scope.form, ["email", "password", "name", "lastname"]);
+		if(params == null) { $scope.error("params required"); return; }
+
+		if(!val.email(params.email))
 		{
-			email: $scope.email,
-			password: $scope.password,
-			name: $scope.name,
-			lastname: $scope.lastname
-		};
+			$scope.error("email invalid");
+			return;
+		}
 
-		var params = $scope.params(form, ["email", "password", "name", "lastname"], []);
-		if(params == null) return;
-
-		$auth.signup(form).then(function(response)
+		$scope.call("auth", "user", "signup", params, "post", function(response)
 		{
-			var data = response.data;
-
-			$location.path("/");
+			$location.path("/login");
 			$scope.success("check your mail inbox");
-		},
-		function(response)
-		{
-			var data = error.data;
-			var message = data ? (data.msg ? data.msg : "service not found") : "service not available";
-			$scope.error(message);
 		});
 	};
 

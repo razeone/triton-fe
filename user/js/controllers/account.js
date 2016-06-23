@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.controller("AccountController", function($scope, $location, $auth, $http)
+app.controller("AccountController", function($scope, $location)
 {
 	$scope.options =
 	{
