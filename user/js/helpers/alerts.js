@@ -12,7 +12,7 @@ function init(toaster)
          showCloseButton: true,
          timeout: 2000
       });
-   }
+   };
 
    var error = function(message)
    {
@@ -23,7 +23,7 @@ function init(toaster)
          showCloseButton: true,
          timeout: 3000
       });
-   }
+   };
 
 	helper.success = success;
 	helper.error = error;

@@ -18,7 +18,7 @@ function init(content, $auth, $storage, $location, service_call)
 
 			$location.path(account);
 		});
-	}
+	};
 
 	var logout = function()
 	{
@@ -26,22 +26,22 @@ function init(content, $auth, $storage, $location, service_call)
       $storage.user = null;
 
       $location.path(home);
-	}
+	};
 
 	var role = function()
 	{
 		return $storage.role;
-	}
+	};
 
    var user = function()
    {
       return $storage.user;
-   }
+   };
 
 	var check = function(role)
 	{
 		if(role != $storage.role) $location.path(account);
-	}
+	};
 
 	helper.login = login;
 	helper.logout = logout;

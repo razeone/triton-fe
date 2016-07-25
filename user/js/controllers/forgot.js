@@ -1,6 +1,8 @@
 var app = angular.module("App");
 
-app.controller("ForgotController", function($scope, $location)
+app.controller("ForgotController", ForgotController);
+ForgotController.$inject = ['$scope', '$location'];
+function ForgotController($scope, $location)
 {
 	var val = $scope.validation;
 
@@ -10,7 +12,7 @@ app.controller("ForgotController", function($scope, $location)
 	$scope.rescue = function()
 	{
 		var params = val.params($scope.form, ["email"]);
-		if(params == null) { $scope.error("email required"); return; }
+		if(params === null) { $scope.error("email required"); return; }
 
 		if(!val.email(params.email))
 		{
@@ -24,4 +26,4 @@ app.controller("ForgotController", function($scope, $location)
 			$scope.success("check your mail inbox");
 		});
 	};
-});
+}

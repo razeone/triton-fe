@@ -6,7 +6,7 @@ function init(api, services, $http, error_alert)
 	var webservice = function(type, role, service)
 	{
 		return api[type] + services[role][service];
-	}
+	};
 
 	var call = function(type, role, service, params, method, callback, callback_error)
 	{
@@ -26,7 +26,7 @@ function init(api, services, $http, error_alert)
 		};
 
 		$http[method](ws, params).then(handler, handler_error);
-	}
+	};
 
 	helper.webservice = webservice;
 	helper.call = call;

@@ -44,22 +44,12 @@ gulp.task('browserify-serve', function(){
     .pipe(gulp.dest('./js/'));
 });
 
-/*gulp.task('browserify', function(){
-  
-  return browserify('./js/main.js')
-    .bundle()
-    .pipe(source('bundle.min.js'))
-    .pipe(buffer())
-    .pipe(gutil.env.env === 'prod' ? $.uglify() : gutil.noop())
-    .pipe(gulp.dest('./js/'));
-});*/
-
 gulp.task('jshint', function () {
-  return gulp.src(['js/**/*.js', '!js/bundle.js'])
-    //.pipe(reload({stream: true, once: true}))
+  return gulp.src(['./js/**/*.js', '!./js/bundle.js', '!./js/nv.d3.js'])
+    .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    //.pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 gulp.task('css', function () {
@@ -80,32 +70,16 @@ gulp.task('css', function () {
     .pipe($.size({title: 'css'}))
     .pipe(gutil.env.env === 'prod' ? minifyCss() : gutil.noop());
 });
-gulp.task('css-serve', function () {
-    return gulp.src(
-      'sass/main.scss'
-    )
-    .pipe(sass({
-        compass:false
-      })
-      .on('error', console.error.bind(console))
-    )
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp/css'))
-    .pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('css/site/'))
-    .pipe($.size({title: 'css'}));
-});
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['browserify-serve', 'css-serve'], function () {
-    /*browserSync({
+gulp.task('serve', ['browserify-serve', 'css'], function () {
+    browserSync({
         notify: false,
-        https: true,
         server: ['.tmp', 'app']
-    });*/
-    gulp.watch(['templates/**/*.html']);
-    gulp.watch(['sass/**/*.{scss,css}'], ['css-serve']);
+    });
+    gulp.watch(['templates/**/*.html'], reload);
+    gulp.watch(['sass/**/*.{scss,css}'], ['css', reload]);
     gulp.watch(['js/*.js', 'js/**/*.js'], ['browserify-serve', 'jshint']);
 });
 

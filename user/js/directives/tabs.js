@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.directive('tabs', function()
+app.directive('tabs',function(tabs)
 {
 	var dir =
 	{
@@ -41,7 +41,7 @@ app.directive('tabs', function()
 	return dir;
 });
 
-app.directive('pane', function()
+app.directive('pane',function(pane)
 {
 	var dir =
 	{
@@ -58,6 +58,5 @@ app.directive('pane', function()
 			'</div>',
 		replace: true
 	};
-
 	return dir;
 });

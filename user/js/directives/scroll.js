@@ -1,6 +1,6 @@
 var app = angular.module("App");
 
-app.directive("scroll", function($window)
+app.directive("scroll",function($window)
 {
 	return function($scope, element, attrs)
 	{

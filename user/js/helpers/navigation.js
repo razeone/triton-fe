@@ -39,7 +39,7 @@ function init(content)
 	{
 		var navigation = site.navigation;
 
-		for(n in navigation)
+		for(var n in navigation)
 		{
 			var nav = navigation[n];
 
@@ -55,11 +55,11 @@ function init(content)
 		({
 			redirectTo: home
 		});
-	}
+	};
 
 	helper.create = createNavigation;
 
 	return helper;
-};
+}
 
 module.exports = init;

@@ -1,6 +1,8 @@
 var app = angular.module("App");
 
-app.controller("ResetController", function($scope, $location, $auth, $routeParams, $http, toaster)
+app.controller("ResetController", ResetController);
+ResetController.$inject = [$scope, $location, $auth, $routeParams, $http, toaster];
+function ResetController($scope, $location, $auth, $routeParams, $http, toaster)
 {
 	var val = $scope.validation;
 	var token = $routeParams.token;
@@ -11,7 +13,7 @@ app.controller("ResetController", function($scope, $location, $auth, $routeParam
 	$scope.reset = function()
 	{
 		var params = val.params($scope.form, ["password", "confirm"]);
-		if(params == null) { $scope.error("password required"); return; }
+		if(params === null) { $scope.error("password required"); return; }
 		params.token =  token;
 
 		$scope.call("auth", "user", "recover", params, "post", function(response)
@@ -20,4 +22,4 @@ app.controller("ResetController", function($scope, $location, $auth, $routeParam
 			$scope.success("password updated");
 		});
 	};
-});
+}

@@ -1,6 +1,8 @@
 var app = angular.module("App");
 
-app.controller("AccessController", function($scope, $auth, $location)
+app.controller("AccessController", AccessController);
+AccessController.$inject = ['$scope', '$auth', '$location'];
+function AccessController($scope, $auth, $location)
 {
 	var val = $scope.validation;
 
@@ -10,7 +12,7 @@ app.controller("AccessController", function($scope, $auth, $location)
 	$scope.login = function()
 	{
 		var params = val.params($scope.form, ["email", "password"]);
-		if(params == null) { $scope.error("params required"); return; }
+		if(params === null) { $scope.error("params required"); return; }
 
 		if(!val.email(params.email))
 		{
@@ -30,7 +32,7 @@ app.controller("AccessController", function($scope, $auth, $location)
 	$scope.signup = function()
 	{
 		var params = val.params($scope.form, ["email", "password", "name", "lastname"]);
-		if(params == null) { $scope.error("params required"); return; }
+		if(params === null) { $scope.error("params required"); return; }
 
 		if(!val.email(params.email))
 		{
@@ -70,5 +72,5 @@ app.controller("AccessController", function($scope, $auth, $location)
 	$scope.toggleModal = function()
 	{
 		$('#t_and_c_m').modal();
-	};
-});
+    };
+}

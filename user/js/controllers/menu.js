@@ -1,6 +1,8 @@
 var app = angular.module("App");
 
-app.controller("MenuController", function($scope, $auth, $location)
+app.controller("MenuController", MenuController);
+MenuController.$inject = ['$scope', '$auth', '$location'];
+function MenuController($scope, $auth, $location)
 {
 	$scope.logout = function()
 	{
@@ -21,4 +23,4 @@ app.controller("MenuController", function($scope, $auth, $location)
 		var currentRoute = $location.path().substring(1) || 'index';
 		return page == currentRoute ? 'active' :'';
 	};
-});
+}
